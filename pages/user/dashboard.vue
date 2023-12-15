@@ -4,6 +4,19 @@ definePageMeta({
 });
 const cookieEmail = useCookie("email").value;
 const role = useCookie("role");
+useHead({
+  title: `${role.value} | dashboard`,
+  meta: [
+    {
+      name: "description",
+      content: "dashboard หญ้าเทียม, growgrassth",
+    },
+    {
+      name: "keywords",
+      content: "dashboard, หญ้าเทียม, แต่งสวน",
+    },
+  ],
+});
 </script>
 
 <template>
@@ -11,8 +24,13 @@ const role = useCookie("role");
     class="w-screen h-screen flex flex-col justify-center items-center dark:text-white"
   >
     <div class="font-LineBD text-2xl">USER DASHBOARD</div>
-    <div>ยินดีต้อนรับคุณ : {{ cookieEmail }}</div>
-    <div>Role : {{ role }}</div>
+    <div>
+      ยินดีต้อนรับคุณ :
+      <span class="font-LineBD text-xl">{{ cookieEmail }}</span>
+    </div>
+    <div>
+      Role : <span class="font-LineBD text-xl">{{ role }}</span>
+    </div>
   </div>
 </template>
 

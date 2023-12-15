@@ -83,9 +83,9 @@ displayArrowText();
         :src="slide.img"
       />
     </Slide>
-    <template #addons>
+    <!-- <template #addons>
       <Navigation />
-    </template>
+    </template> -->
   </Carousel>
   <!-- @todo Section 2 -->
   <Carousel :wrap-around="true" :transition="1400">
@@ -112,9 +112,9 @@ displayArrowText();
       />
       <NuxtImg class="carousel__item h-screen object-cover" :src="slide.img" />
     </Slide>
-    <template #addons>
+    <!-- <template #addons>
       <Navigation />
-    </template>
+    </template> -->
   </Carousel>
 </template>
 

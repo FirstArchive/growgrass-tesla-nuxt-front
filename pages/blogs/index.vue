@@ -1,4 +1,19 @@
-import { NuxtLink } from '../../.nuxt/components';
+<script setup lang="ts">
+useHead({
+  title: "Blogs",
+  meta: [
+    {
+      name: "description",
+      content: "Blogs หญ้าเทียม, growgrassth",
+    },
+    {
+      name: "keywords",
+      content: "Blogs, หญ้าเทียม, แต่งสวน",
+    },
+  ],
+});
+</script>
+
 <template>
   <div class="snap-y snap-mandatory h-screen overflow-scroll overflow-x-hidden">
     <div class="snap-start h-screen">
@@ -33,7 +48,5 @@ import { NuxtLink } from '../../.nuxt/components';
     </div>
   </div>
 </template>
-
-<script setup lang="ts"></script>
 
 <style scoped></style>
