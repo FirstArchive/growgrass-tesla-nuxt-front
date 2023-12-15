@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "LineRG";
+  src: url("/assets/fonts/LINESeed_Rg.woff2") format("truetype");
+}
+@font-face {
+  font-family: "LineBD";
+  src: url("/assets/fonts/LINESeed_Bd.woff2") format("truetype");
+}
+@font-face {
+  font-family: "LineHE";
+  src: url("/assets/fonts/LINESeed_He.woff2") format("truetype");
+}
+
+html {
+  font-family: "LineRG";
+}
