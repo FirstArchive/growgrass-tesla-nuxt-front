@@ -21,11 +21,16 @@ const footer = reactive([
 <template>
   <div class="w-full py-2">
     <div class="flex gap-2 justify-center items-baseline">
-      <h1 class="text-center font-LineBD text-slate-950 text-xs">
+      <h1
+        class="text-center dark:text-slate-600 font-LineBD text-slate-950 text-xs"
+      >
         GROWGRASS &copy; 2023
       </h1>
       <ul v-for="i in footer" :key="i.alt">
-        <NuxtLink :to="i.to" class="font-LineBD text-slate-950 text-xs">
+        <NuxtLink
+          :to="i.to"
+          class="font-LineBD dark:text-slate-600 text-slate-950 text-xs"
+        >
           {{ i.alt }}
         </NuxtLink>
       </ul>

@@ -13,6 +13,7 @@
     "@nuxt/devtools": "latest",
     "@nuxt/image": "^1.1.0",
     "@nuxtjs/color-mode": "^3.3.2",
+    "@vite-pwa/nuxt": "^0.3.5",
     "nuxt": "^3.8.2",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5",

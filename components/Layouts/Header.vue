@@ -1,10 +1,14 @@
 <script setup lang="ts">
 const role = useCookie("role").value;
-const roleCheck = () => {
+// console.log(role);
+
+const getStatus = () => {
   if (role === "user") {
-    return true;
+    return "user";
+  } else if (role === "admin") {
+    return "admin";
   } else {
-    return false;
+    return "unauthenticated";
   }
 };
 import type { goto } from "../../type/goto";
@@ -71,19 +75,35 @@ const darkmode = ref(
         </NuxtLink>
       </div>
 
-      <!-- Role status check -->
-      <NuxtLink to="/user/dashboard" v-if="roleCheck()" class="hidden lg:flex">
-        สถานะ&nbsp;&nbsp;
-        <span class="font-LineBD text-green-600">{{ role }}</span>
-      </NuxtLink>
-      <NuxtLink
-        to="/admin/dashboard"
-        v-else="roleCheck()"
-        class="hidden lg:flex"
-      >
-        สถานะ&nbsp;&nbsp;
-        <span class="font-LineBD text-sky-600">{{ role }}</span>
-      </NuxtLink>
+      <!-- ตรวจสอบสถานะของ role -->
+      <div>
+        <NuxtLink
+          to="/user/dashboard"
+          v-if="getStatus() === 'user'"
+          class="hidden lg:flex text-sm items-center"
+        >
+          สถานะ&nbsp;&nbsp;
+          <span class="font-LineBD text-sm text-green-600">ผู้ใช้</span>
+        </NuxtLink>
+        <NuxtLink
+          to="/admin/dashboard"
+          v-else-if="getStatus() === 'admin'"
+          class="hidden lg:flex text-sm items-center"
+        >
+          items-center สถานะ&nbsp;&nbsp;
+          <span class="font-LineBD text-sm text-sky-600">ผู้ดูแลระบบ</span>
+        </NuxtLink>
+        <NuxtLink
+          to="/login"
+          v-else
+          class="hidden lg:flex text-sm items-center"
+        >
+          สถานะ&nbsp;&nbsp;
+          <span class="font-LineBD text-sm text-green-600"
+            >ยังไม่ได้ล็อกอิน</span
+          >
+        </NuxtLink>
+      </div>
       <!-- Mobile menu -->
       <div class="lg:hidden">
         <buttonMobileMenu :goto="goto" />

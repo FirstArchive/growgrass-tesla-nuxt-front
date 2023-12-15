@@ -1,6 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
+    pageTransition: { name: "slide-top", mode: "out-in" },
+    layoutTransition: false,
     head: {
       htmlAttrs: {
         lang: "en",
@@ -32,17 +34,28 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   modules: [
+    "@vite-pwa/nuxt",
     "@nuxt/ui",
     "vue3-carousel-nuxt",
     "@nuxt/image",
     "@nuxtjs/color-mode",
   ],
+  // pwa: {
+  //   manifest: {
+  //     name: "Growgrass หญ้าเทียม pwa",
+  //     short_name: "Growgrass pwa",
+  //     description: "Test nuxt pwa growgrass",
+  //   },
+  //   workbox: {
+  //     navigateFallback: "/",
+  //   },
+  //   devOptions: {
+  //     enabled: true,
+  //     type: "module",
+  //   },
+  // },
   css: ["/layouts/global.css"],
   colorMode: {
     preference: "light",
-  },
-  app: {
-    pageTransition: { name: "slide-top", mode: "out-in" },
-    layoutTransition: false,
   },
 });

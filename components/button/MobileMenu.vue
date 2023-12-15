@@ -1,12 +1,21 @@
 <script setup>
 const role = useCookie("role").value;
-const roleCheck = () => {
+const getStatus = () => {
   if (role === "user") {
-    return true;
+    return "user";
+  } else if (role === "admin") {
+    return "admin";
   } else {
-    return false;
+    return "unauthenticated";
   }
 };
+// const roleCheck = () => {
+//   if (role === "user") {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 const isOpen = ref(false);
 
 defineProps({
@@ -54,16 +63,42 @@ const darkmode = ref("dark:text-white ");
         </ul>
         <div class="flex flex-col gap-5">
           <hr />
+          <!--  -->
+          <!-- <NuxtLink
+            to="/user/dashboard"
+            v-if="getStatus() === 'user'"
+            class="hidden lg:flex"
+          >
+            สถานะ&nbsp;&nbsp;
+            <span class="font-LineBD text-green-600">ผู้ใช้</span>
+          </NuxtLink>
+          <NuxtLink
+            to="/admin/dashboard"
+            v-else-if="getStatus() === 'admin'"
+            class="hidden lg:flex"
+          >
+            สถานะ&nbsp;&nbsp;
+            <span class="font-LineBD text-sky-600">ผู้ดูแลระบบ</span>
+          </NuxtLink>
+          <NuxtLink to="/login" v-else class="hidden lg:flex">
+            สถานะ&nbsp;&nbsp;
+            <span class="font-LineBD text-green-600">ยังไม่ได้ล็อกอิน</span>
+          </NuxtLink> -->
           <!-- Role status check -->
-          <h1 v-if="roleCheck()" class="text-right">
-            สถานะตอนนี้&nbsp;
-            <span class="font-LineBD text-green-500">{{ role }}</span>
-          </h1>
-          <!-- v-if="roleCheck()" || v-else="roleCheck()" -->
-          <h1 v-else="roleCheck()" class="text-right">
-            สถานะตอนนี้&nbsp;
-            <span class="font-LineBD text-blue-700">{{ role }}</span>
-          </h1>
+          <div class="flex justify-end">
+            <h1 v-if="getStatus() === 'user'" class="text-right">
+              สถานะตอนนี้&nbsp;
+              <span class="font-LineBD text-green-500">ผู้ใช้</span>
+            </h1>
+            <h1 v-else-if="getStatus() === 'admin'" class="text-right">
+              สถานะตอนนี้&nbsp;
+              <span class="font-LineBD text-blue-700">ผู้ดูแลระบบ</span>
+            </h1>
+            <h1 v-else="getStatus()" class="text-right">
+              สถานะตอนนี้&nbsp;
+              <span class="font-LineBD text-blue-700">ยังไม่ได้ล็อกอิน</span>
+            </h1>
+          </div>
           <!--  -->
           <hr />
           <span class="font-LineBD text-3xl text-right">GO DASHBOARD</span>

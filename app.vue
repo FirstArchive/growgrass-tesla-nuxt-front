@@ -1,7 +1,10 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage class="dark:bg-slate-900 h-screen" />
-  </NuxtLayout>
+  <div>
+    <VitePwaManifest />
+    <NuxtLayout>
+      <NuxtPage class="dark:bg-slate-900 h-screen" />
+    </NuxtLayout>
+  </div>
 </template>
 
 <style>
