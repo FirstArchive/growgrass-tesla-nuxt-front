@@ -37,6 +37,7 @@ const products: products[] = reactive([
   <Carousel :itemsToShow="6" :wrapAround="true" :transition="500">
     <Slide v-for="product in products" :key="product.caption">
       <NuxtImg
+        loading="lazy"
         :src="product.img"
         :key="product.id"
         class="carousel__item rounded-lg h-24 sm:h-48 w-auto object-contain"

@@ -65,42 +65,6 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     router.go(0);
   }
 }
-
-// async function onSubmit(event: FormSubmitEvent<Schema>) {
-//   const cookieEmail = useCookie("email").value;
-//   const cookiePass = JSON.stringify(useCookie("pass").value);
-//   console.log(cookieEmail, cookiePass);
-//   const inputEmail = event.data.email;
-//   const inputPass = event.data.password;
-//   const confirmPassword = event.data.confirmPassword;
-
-//   if (inputPass === confirmPassword) {
-//     const cookieEmail = useCookie("email", {
-//       sameSite: "strict",
-//       default: () => "no",
-//       maxAge: 2592000, // 30 days in seconds
-//     });
-//     cookieEmail.value = inputEmail; //รับ email ที๋ user กรอกใน input เก็บไปใน cookie
-//     // ^ Set cookie Email
-//     // ----------------------
-//     const cookiePass = useCookie("pass", {
-//       sameSite: "strict",
-//       default: () => "no",
-//       maxAge: 2592000, // 30 days in seconds
-//     });
-//     cookiePass.value = inputPass; //รับ password ที๋ user กรอกใน input เก็บไปใน cookie
-//     // ^ Set cookie Password
-//   }
-//   // Check that if you have cookie
-//   if (inputEmail === cookieEmail && inputPass === cookieEmail) {
-//     alert(
-//       `มีข้อมูล ${cookieEmail} ในระบบอยู่แล้ว โปรด Login หรือ ลืมรหัสผ่าน?`
-//     );
-//   } else {
-//     alert(`สมัครสมาชิก ยินดีต้อนรับคุณ ${cookieEmail} โปรด Login`);
-//     router.go(0);
-//   }
-// }
 </script>
 
 <template>

@@ -79,10 +79,30 @@ displayArrowText();
         buy="สั่งซื้อ"
       />
 
-      <NuxtImg
+      <!-- <NuxtImg
+        preload
+        loading="lazy"
         class="carousel__item h-screen object-cover object-bottom md:object-right"
         :src="slide.img"
-      />
+      /> -->
+      <video-background src="/video/Moon4k.mp4" style="height: 100vh">
+        <div class="h-screen flex flex-col justify-between">
+          <div class="text-white">
+            <h1
+              class="mb-2 mt-24 font-LineBD text-3xl md:text-4xl tracking-tight px-6"
+            >
+              ยินดีต้อนรับสู่ growgrass
+            </h1>
+            <p>พบกับความงามไร้ที่สิ้นสุด</p>
+          </div>
+          <ButtonMyButtonGroup
+            :MainPageaAds1="MainPageaAds1"
+            class="w-full mb-24"
+            seemore="ดูเพิ่มเติม"
+            buy="สั่งซื้อ"
+          />
+        </div>
+      </video-background>
     </Slide>
     <!-- <template #addons>
       <Navigation />
@@ -111,7 +131,11 @@ displayArrowText();
         seemore="ดูเพิ่มเติม"
         buy="สั่งซื้อ"
       />
-      <NuxtImg class="carousel__item h-screen object-cover" :src="slide.img" />
+      <NuxtImg
+        loading="lazy"
+        class="carousel__item h-screen object-cover"
+        :src="slide.img"
+      />
     </Slide>
     <!-- <template #addons>
       <Navigation />
