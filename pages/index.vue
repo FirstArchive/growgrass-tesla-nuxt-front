@@ -95,9 +95,9 @@ const MainPageaAds2 = [
 
       <carouselMyCarousel :MainPageaAds1="MainPageaAds1" />
     </div>
-    <div class="snap-start">
+    <!-- <div class="snap-start">
       <carouselMyCarousel :MainPageaAds2="MainPageaAds2" />
-    </div>
+    </div> -->
 
     <!-- <div class="snap-start h-screen">
       <div

@@ -23,22 +23,8 @@ displayArrowText();
 <!-- use @ / index.vue -->
 <template>
   <!-- @todo Section 1 -->
-  <Carousel :wrap-around="true" :transition="1300">
-    <Slide v-for="slide in MainPageaAds1" :key="slide.caption" class="h-30">
-      <!-- <div class="flex justify-between items-center mx-auto">
-        <UIcon
-          name="i-material-symbols-arrow-back-ios"
-          dynamic
-          class="absolute text-9xl mr-96"
-        />
-        <-- @audit แก้ด้วย!! บั๊ก Pageination เวร!! -->
-      <!-- <UIcon
-          name="i-material-symbols-arrow-forward-ios"
-          dynamic
-          class="absolute text-9xl ml-96"
-        />
-      </div> -->
-      <!-- <div class="carousel__item h-screen w-full bg-scroll bg-top"> -->
+  <Carousel :wrap-around="false" :transition="1300">
+    <!-- <Slide v-for="slide in MainPageaAds1" :key="slide.caption" class="h-30">
       <div
         :class="slide.titlecolor"
         class="absolute top-28 md:top-44 lg:top-36 xl:top-24 2xl:top-44"
@@ -55,36 +41,23 @@ displayArrowText();
         >
           {{ slide.description }}
         </h1>
-
-        <!-- <div
-          class="arrow-text flex w-full justify-center absolute translate-y-40 xl:translate-y-36"
-          v-if="showArrowText"
-          :style="{ opacity: textOpacity }"
-        >
-          <h1 class="text-3xl opacity-20">
-            เลื่อนขวา
-            <UIcon
-              name="i-material-symbols-arrow-forward"
-              dynamic
-              class="text-xl"
-            />
-          </h1>
-        </div> -->
       </div>
-      <!-- </div> -->
+
       <ButtonMyButtonGroup
         :MainPageaAds1="MainPageaAds1"
         class="absolute w-full bottom-24 md:bottom-40 lg:bottom-36 xl:bottom-20 2xl:bottom-32"
         seemore="ดูเพิ่มเติม"
         buy="สั่งซื้อ"
       />
-
-      <!-- <NuxtImg
+      <NuxtImg
         preload
         loading="lazy"
         class="carousel__item h-screen object-cover object-bottom md:object-right"
         :src="slide.img"
-      /> -->
+      />
+    </Slide> -->
+    <!-- @audit-ok บนคืออันเก่าที่เป็นรูป ข้างล่างนี้คือเทส video background -->
+    <Slide class="h-30">
       <video-background src="/video/Moon4k.mp4" style="height: 100vh">
         <div class="h-screen flex flex-col justify-between">
           <div class="text-white">
@@ -109,9 +82,9 @@ displayArrowText();
     </template> -->
   </Carousel>
   <!-- @todo Section 2 -->
-  <Carousel :wrap-around="true" :transition="1300">
+  <!-- <div class="carousel__item h-screen w-full bg-scroll bg-top"> div จบอยู่ใต้/div ต่อจาก /h1 description -->
+  <!-- <Carousel :wrap-around="true" :transition="1300">
     <Slide v-for="slide in MainPageaAds2" :key="slide.caption" class="h-screen">
-      <!-- <div class="carousel__item h-screen w-full bg-scroll bg-top"> -->
       <div
         :class="slide.titlecolor"
         class="absolute top-28 md:top-44 lg:top-36 xl:top-24 2xl:top-44"
@@ -125,7 +98,7 @@ displayArrowText();
           {{ slide.description }}
         </h1>
       </div>
-      <!-- </div> -->
+
       <ButtonMyButtonGroup
         class="absolute w-full bottom-14 md:bottom-40 lg:bottom-36 xl:bottom-20 2xl:bottom-32"
         seemore="ดูเพิ่มเติม"
@@ -137,10 +110,7 @@ displayArrowText();
         :src="slide.img"
       />
     </Slide>
-    <!-- <template #addons>
-      <Navigation />
-    </template> -->
-  </Carousel>
+  </Carousel> -->
 </template>
 
 <style scoped>
