@@ -31,6 +31,7 @@ useHead({
     <div>
       Role : <span class="font-LineBD text-xl">{{ role }}</span>
     </div>
+    <div class="my-4"><ButtonLogoutBtn /></div>
   </div>
 </template>
 

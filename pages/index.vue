@@ -76,7 +76,7 @@ const MainPageaAds2 = [
     description: "เริ่มต้น 200.-",
   },
   {
-    titlecolor: "text-slate-900",
+    titlecolor: "text-white",
     textstyle: "",
     img: "/img/dalle2.png",
     caption: "บริการวัดพื้นที่",

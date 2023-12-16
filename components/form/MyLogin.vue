@@ -30,18 +30,26 @@ const router = useRouter();
 const cookieEmail = useCookie("email");
 const cookiePass = useCookie("pass").value;
 const role = useCookie("role");
-if (cookieEmail != undefined || cookiePass != undefined) {
-  console.log(cookieEmail.value, cookiePass);
-} else {
-  console.log(`cookieEmail not value , cookiePass not value`);
-}
+
+// const testRoleCheck = () => {
+//   if (cookieEmail != undefined || cookiePass != undefined) {
+//     console.log(cookieEmail.value);
+//     if (!cookiePass) {
+//       console.log("ไม่มี password");
+//     } else {
+//       console.log(cookiePass);
+//     }
+//   } else {
+//     console.log(`cookieEmail not value , cookiePass not value`);
+//   }
+// };
+// testRoleCheck();
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   const inputEmail = event.data.email;
   const inputPassword = event.data.password;
 
   // user verify เช็คจาก Cookie ด้วย
-
   if (inputEmail === cookieEmail.value && inputPassword === cookiePass) {
     alert(`ยินดีต้อนรับคุณ ${cookieEmail.value} กำลังพาไปหน้า dashboard`);
     window.location.href = "/user/dashboard";
@@ -93,7 +101,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       :ui="{ border: { size: { horizontal: 'border-t-2' } } }"
     />
     <!-- btntext="สมัครสมาชิก" -->
-    <ButtonCusBtn />
+    <ButtonSigninBtn />
   </UContainer>
 </template>
 

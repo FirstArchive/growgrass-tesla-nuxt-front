@@ -61,29 +61,9 @@ const darkmode = ref("dark:text-white ");
             <UIcon :name="menu.mobileicon" class="text-xl" dynamic
           /></NuxtLink>
         </ul>
+
         <div class="flex flex-col gap-5">
           <hr />
-          <!--  -->
-          <!-- <NuxtLink
-            to="/user/dashboard"
-            v-if="getStatus() === 'user'"
-            class="hidden lg:flex"
-          >
-            สถานะ&nbsp;&nbsp;
-            <span class="font-LineBD text-green-600">ผู้ใช้</span>
-          </NuxtLink>
-          <NuxtLink
-            to="/admin/dashboard"
-            v-else-if="getStatus() === 'admin'"
-            class="hidden lg:flex"
-          >
-            สถานะ&nbsp;&nbsp;
-            <span class="font-LineBD text-sky-600">ผู้ดูแลระบบ</span>
-          </NuxtLink>
-          <NuxtLink to="/login" v-else class="hidden lg:flex">
-            สถานะ&nbsp;&nbsp;
-            <span class="font-LineBD text-green-600">ยังไม่ได้ล็อกอิน</span>
-          </NuxtLink> -->
           <!-- Role status check -->
           <div class="flex justify-end">
             <h1 v-if="getStatus() === 'user'" class="text-right">

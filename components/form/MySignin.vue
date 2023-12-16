@@ -44,7 +44,7 @@ const router = useRouter();
 const cookieEmail = useCookie("email");
 const cookiePass = useCookie("pass");
 const role = useCookie("role");
-console.log(cookieEmail.value, cookiePass.value);
+// console.log(cookieEmail.value, cookiePass.value);
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   const inputEmail = event.data.email;
@@ -147,6 +147,6 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       class="my-3"
       :ui="{ border: { size: { horizontal: 'border-t-2' } } }"
     />
-    <!-- <ButtonCusBtn btntext="มีบัญชีอยู่แล้ว? Login" class="w-full" /> -->
+    <!-- <ButtonSigninBtn btntext="มีบัญชีอยู่แล้ว? Login" class="w-full" /> -->
   </UContainer>
 </template>

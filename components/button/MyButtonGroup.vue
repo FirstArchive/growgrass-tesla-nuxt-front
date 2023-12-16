@@ -49,17 +49,56 @@ const breakpoints = ref({
         :wrap-around="true"
         class="h-[40rem] dark:text-white"
       >
-        <Slide v-for="slide in 2" :key="slide">
+        <!--  v-for="slide in 2" -->
+        <Slide :key="slide">
           <div
             class="py-8 md:py-4 flex items-center justify-center overflow-y-auto h-[40rem]"
           >
             <div class="carousel__item px-10 md:px-20 my-auto items-start">
               <!-- {{ slide }} -->
-              <div v-for="title in MainPageaAds1">
-                <h1 class="text-4xl font-LineBD">{{ title.caption }}</h1>
+              <!-- v-for="title in MainPageaAds1" -->
+              <div>
+                <h1 class="text-4xl font-LineBD">1</h1>
+                <UDivider label="รายละเอียด" class="my-3" />
+                <p class="text-ellipsis">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
+        </Slide>
+        <Slide :key="slide">
+          <div
+            class="py-8 md:py-4 flex items-center justify-center overflow-y-auto h-[40rem]"
+          >
+            <div class="carousel__item px-10 md:px-20 my-auto items-start">
+              <!-- {{ slide }} -->
+              <!-- v-for="title in MainPageaAds1" -->
+              <div>
+                <h1 class="text-4xl font-LineBD">2</h1>
                 <UDivider label="รายละเอียด" class="my-3" />
                 <p class="text-ellipsis">
-                  <!-- {{ title.description }} -->
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Molestiae nostrum quisquam exercitationem enim, amet aliquam,
+                  expedita vitae sit numquam explicabo laboriosam perferendis
+                  laborum vero modi quia ratione placeat eum iusto.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Slide>
+        <Slide :key="slide">
+          <div
+            class="py-8 md:py-4 flex items-center justify-center overflow-y-auto h-[40rem]"
+          >
+            <div class="carousel__item px-10 md:px-20 my-auto items-start">
+              <!-- {{ slide }} -->
+              <!-- v-for="title in MainPageaAds1" -->
+              <div>
+                <h1 class="text-4xl font-LineBD">3</h1>
+                <UDivider label="รายละเอียด" class="my-3" />
+                <p class="text-ellipsis">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Mollitia neque illo qui iusto nisi iste perspiciatis adipisci
+                  magnam culpa fugiat?
                 </p>
               </div>
             </div>

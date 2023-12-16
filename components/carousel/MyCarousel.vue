@@ -23,7 +23,7 @@ displayArrowText();
 <!-- use @ / index.vue -->
 <template>
   <!-- @todo Section 1 -->
-  <Carousel :wrap-around="true" :transition="1400">
+  <Carousel :wrap-around="true" :transition="1300">
     <Slide v-for="slide in MainPageaAds1" :key="slide.caption" class="h-30">
       <!-- <div class="flex justify-between items-center mx-auto">
         <UIcon
@@ -41,11 +41,11 @@ displayArrowText();
       <!-- <div class="carousel__item h-screen w-full bg-scroll bg-top"> -->
       <div
         :class="slide.titlecolor"
-        class="absolute top-28 md:top-44 lg:top-36 xl:top-20"
+        class="absolute top-28 md:top-44 lg:top-36 xl:top-24 2xl:top-44"
       >
         <h1
           :class="slide.textstyle"
-          class="font-LineBD text-4xl md:text-6xl tracking-tight px-6"
+          class="font-LineBD text-4xl md:text-5xl tracking-tight px-6"
         >
           {{ slide.caption }}
         </h1>
@@ -74,10 +74,11 @@ displayArrowText();
       <!-- </div> -->
       <ButtonMyButtonGroup
         :MainPageaAds1="MainPageaAds1"
-        class="absolute w-full bottom-20 md:bottom-40 lg:bottom-36 xl:bottom-12"
+        class="absolute w-full bottom-24 md:bottom-40 lg:bottom-36 xl:bottom-20 2xl:bottom-32"
         seemore="ดูเพิ่มเติม"
         buy="สั่งซื้อ"
       />
+
       <NuxtImg
         class="carousel__item h-screen object-cover object-bottom md:object-right"
         :src="slide.img"
@@ -88,15 +89,15 @@ displayArrowText();
     </template> -->
   </Carousel>
   <!-- @todo Section 2 -->
-  <Carousel :wrap-around="true" :transition="1400">
+  <Carousel :wrap-around="true" :transition="1300">
     <Slide v-for="slide in MainPageaAds2" :key="slide.caption" class="h-screen">
       <!-- <div class="carousel__item h-screen w-full bg-scroll bg-top"> -->
       <div
         :class="slide.titlecolor"
-        class="absolute top-28 md:top-44 lg:top-36 xl:top-20"
+        class="absolute top-28 md:top-44 lg:top-36 xl:top-24 2xl:top-44"
       >
         <h1
-          class="font-LineBD text-4xl md:text-6xl tracking-tight drop-shadow-md"
+          class="font-LineBD text-4xl md:text-5xl tracking-tight drop-shadow-md"
         >
           {{ slide.caption }}
         </h1>
@@ -106,7 +107,7 @@ displayArrowText();
       </div>
       <!-- </div> -->
       <ButtonMyButtonGroup
-        class="absolute w-full bottom-14 md:bottom-40 lg:bottom-36 xl:bottom-12"
+        class="absolute w-full bottom-14 md:bottom-40 lg:bottom-36 xl:bottom-20 2xl:bottom-32"
         seemore="ดูเพิ่มเติม"
         buy="สั่งซื้อ"
       />

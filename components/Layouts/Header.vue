@@ -55,7 +55,7 @@ const darkmode = ref(
       <div
         v-for="path in goto"
         :key="path.alt"
-        class="dark:hover:bg-slate-800 hover:bg-slate-100 hover:cursor-pointer p-1 rounded-md duration-300 relative md:left-4 xl:left-[5.13rem]"
+        class="dark:hover:bg-slate-800 hover:bg-slate-100 hover:cursor-pointer p-1 rounded-md duration-300 relative md:left-[1.5rem] xl:left-[5.75rem]"
       >
         <NuxtLink :to="path.to">
           <span>{{ path.alt }}</span>
@@ -90,7 +90,7 @@ const darkmode = ref(
           v-else-if="getStatus() === 'admin'"
           class="hidden lg:flex text-sm items-center"
         >
-          items-center สถานะ&nbsp;&nbsp;
+          สถานะ&nbsp;&nbsp;
           <span class="font-LineBD text-sm text-sky-600">ผู้ดูแลระบบ</span>
         </NuxtLink>
         <NuxtLink
