@@ -22,7 +22,7 @@ const isOpen = ref(false);
   <UModal v-model="isOpen">
     <div class="p-4 h-[41rem] md:h-[39rem] grid items-center">
       <div class="">
-        <FormMySignin />
+        <FormSignin />
         <UContainer class="max-w-xs md:max-w-sm">
           <UButton
             @click="isOpen = false"

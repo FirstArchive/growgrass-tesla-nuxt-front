@@ -22,12 +22,18 @@ useSeoMeta({
   ogImage: "/ai-img/aidall9.png",
   twitterCard: "summary_large_image",
 });
-import { MainPageAds1, MainPageAds2 } from "~/data/mainpage";
 </script>
 
 <template>
-  <carouselMyCarousel
-    :MainPageAds1="MainPageAds1"
-    :MainPageAds2="MainPageAds2"
-  />
+  <div
+    class="snap-y snap-mandatory overflow-scroll overflow-x-hidden"
+    style="height: 100dvh"
+  >
+    <div class="snap-start">
+      <CarouselPicCarousel />
+    </div>
+    <div class="snap-start">
+      <CarouselVideoCarousel />
+    </div>
+  </div>
 </template>

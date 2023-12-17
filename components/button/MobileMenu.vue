@@ -93,6 +93,6 @@ const darkmode = ref("dark:text-white ");
         </div>
       </div>
     </div>
-    <LayoutsFooter class="absolute bottom-0" />
+    <AppFooter class="absolute bottom-0" />
   </USlideover>
 </template>

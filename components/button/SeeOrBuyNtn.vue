@@ -45,7 +45,7 @@ const breakpoints = ref({
         class="py-10 dark:text-white"
       >
         <!--  v-for="slide in 2" -->
-        <Slide v-for="i in MainPageAds1" :key="slide">
+        <Slide v-for="i in MainPageAds1" :key="i.title">
           <div
             class="py-8 md:py-4 flex items-center justify-center overflow-y-auto"
           >
