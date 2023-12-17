@@ -1,16 +1,6 @@
 <script setup lang="ts">
 useHead({
   title: "Login",
-  // meta: [
-  //   {
-  //     name: "description",
-  //     content: "Blogs หญ้าเทียม, growgrassth",
-  //   },
-  //   {
-  //     name: "keywords",
-  //     content: "Blogs, หญ้าเทียม, แต่งสวน",
-  //   },
-  // ],
 });
 </script>
 <template>

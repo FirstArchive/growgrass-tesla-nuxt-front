@@ -2,7 +2,7 @@
   <div>
     <VitePwaManifest />
     <NuxtLayout>
-      <NuxtPage class="dark:bg-slate-900 h-screen" />
+      <NuxtPage class="dark:bg-slate-900" style="height: 100svh" />
     </NuxtLayout>
   </div>
 </template>

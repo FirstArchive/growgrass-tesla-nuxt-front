@@ -1,12 +1,4 @@
 <template>
-  <!-- <UButton
-    icon="i-ph-sun-bold"
-    size="sm"
-    color="primary"
-    square
-    variant="ghost"
-  /> -->
-
   <USelectMenu
     variant="none"
     v-model="selected"

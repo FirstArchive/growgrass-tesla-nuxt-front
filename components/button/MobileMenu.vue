@@ -1,4 +1,6 @@
 <script setup>
+import { mobileHeader } from "~/data/header";
+
 const role = useCookie("role").value;
 const getStatus = () => {
   if (role === "user") {
@@ -9,18 +11,9 @@ const getStatus = () => {
     return "unauthenticated";
   }
 };
-// const roleCheck = () => {
-//   if (role === "user") {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// };
+
 const isOpen = ref(false);
 
-defineProps({
-  goto: Object,
-});
 const darkmode = ref("dark:text-white ");
 </script>
 <!-- use @ Header.vue -->
@@ -30,7 +23,7 @@ const darkmode = ref("dark:text-white ");
       <UIcon name="i-ph-list-bold" dynamic class="text-xl" />
     </UButton>
     <NuxtLink @click="isOpen = false" to="/login" class="flex">
-      <UIcon :name="goto[2].icon" class="text-xl" dynamic />
+      <UIcon :name="mobileHeader[2].icon" class="text-xl" dynamic />
     </NuxtLink>
   </div>
 
@@ -47,18 +40,18 @@ const darkmode = ref("dark:text-white ");
       </div>
       <div class="h-full flex flex-col gap-10 mt-10">
         <ul
-          v-for="menu in goto"
-          :key="menu.to"
+          v-for="i in mobileHeader"
+          :key="i.to"
           class="inline-flex justify-between items-center"
         >
           <NuxtLink
             @click="isOpen = false"
-            :to="menu.to"
+            :to="i.to"
             class="text-4xl w-full"
-            >{{ menu.alt }}</NuxtLink
+            >{{ i.alt }}</NuxtLink
           >
-          <NuxtLink @click="isOpen = false" :to="menu.to" class="text-4xl">
-            <UIcon :name="menu.mobileicon" class="text-xl" dynamic
+          <NuxtLink @click="isOpen = false" :to="i.to" class="text-4xl">
+            <UIcon :name="i.mobileicon" class="text-xl" dynamic
           /></NuxtLink>
         </ul>
 

@@ -1,4 +1,8 @@
 <script setup lang="ts">
+/**
+ * //NOTE - ยังไม่ได้ใช้
+ */
+
 type products = {
   id: number;
   img: string;

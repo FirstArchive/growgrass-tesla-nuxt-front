@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { desktopHeader } from "~/data/header";
+
 const role = useCookie("role").value;
 // console.log(role);
 
@@ -11,28 +13,7 @@ const getStatus = () => {
     return "unauthenticated";
   }
 };
-import type { goto } from "../../type/goto";
 
-const goto: goto[] = reactive([
-  {
-    to: "/products",
-    alt: "สินค้า",
-    icon: "i-ri-shopping-bag-fill",
-    mobileicon: "i-material-symbols-arrow-outward",
-  },
-  {
-    to: "/blogs",
-    alt: "บทความ",
-    icon: "i-material-symbols-book-2",
-    mobileicon: "i-material-symbols-arrow-outward",
-  },
-  {
-    to: "/login",
-    alt: "ล็อกอิน",
-    icon: "i-material-symbols-account-circle",
-    mobileicon: "i-material-symbols-account-circle",
-  },
-]);
 const darkmode = ref(
   "dark:hover:bg-slate-950 dark:hover:text-white dark:text-white"
 );
@@ -53,12 +34,12 @@ const darkmode = ref(
     <!-- Desktop menu -->
     <div class="md:gap-3 xl:gap-10 hidden md:flex mt-[0.15rem]">
       <div
-        v-for="path in goto"
-        :key="path.alt"
-        class="dark:hover:bg-slate-800 hover:bg-slate-100 hover:cursor-pointer p-1 rounded-md duration-300 relative md:left-[1.5rem] xl:left-[5.75rem]"
+        v-for="i in desktopHeader"
+        :key="i.alt"
+        class="dark:hover:bg-slate-800 hover:bg-slate-100 hover:cursor-pointer p-1 rounded-md duration-300 relative md:left-[1.75rem] xl:left-[6rem] 2xl:left-[6.5rem]"
       >
-        <NuxtLink :to="path.to">
-          <span>{{ path.alt }}</span>
+        <NuxtLink :to="i.to">
+          <span>{{ i.alt }}</span>
         </NuxtLink>
       </div>
     </div>
@@ -66,12 +47,12 @@ const darkmode = ref(
     <div class="flex gap-5 items-center">
       <ButtonColorMode class="left-7 md:left-0" />
       <div
-        v-for="path in goto"
-        :key="path.alt"
+        v-for="i in desktopHeader"
+        :key="i.alt"
         class="hidden sm:flex md:hidden lg:hidden xl:flex"
       >
-        <NuxtLink :to="path.to">
-          <UIcon :name="path.icon" dynamic class="text-xl" />
+        <NuxtLink :to="i.to">
+          <UIcon :name="i.icon" dynamic class="text-xl" />
         </NuxtLink>
       </div>
 
@@ -106,7 +87,7 @@ const darkmode = ref(
       </div>
       <!-- Mobile menu -->
       <div class="lg:hidden">
-        <buttonMobileMenu :goto="goto" />
+        <buttonMobileMenu />
       </div>
     </div>
   </div>
