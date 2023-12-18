@@ -19,13 +19,12 @@ displayArrowText();
 <template>
   <Carousel :wrap-around="true" :transition="1000">
     <Slide v-for="(i, index) in MainPageAds2" :key="index">
-      <!--  -->
-      <video-background src="/video/Moon4k.mp4" class="h-screen">
+      <video-background src="/video/Moon4k.mp4" style="height: 100lvh">
         <div class="flex justify-center">
           <div
-            class="h-screen w-96 sm:w-[28rem] flex flex-col items-center justify-between py-24"
+            class="w-96 sm:w-[28rem] flex flex-col items-center justify-between py-24"
+            style="height: 100svh"
           >
-            <!-- style="height: 100dvh" -->
             <div class="text-white">
               <h1 class="font-LineBD text-3xl md:text-4xl tracking-tight px-6">
                 ยินดีต้อนรับสู่ growgrass

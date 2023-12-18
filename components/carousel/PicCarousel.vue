@@ -32,6 +32,7 @@ displayArrowText();
       > -->
       <!-- style="height: 100lvh" -->
       <UContainer
+        style="height: 100svh"
         class="w-96 sm:w-[28rem] flex justify-between absolute flex-col py-24"
       >
         <div :class="i.textstyle" class="flex flex-col gap-y-2 items-center">
