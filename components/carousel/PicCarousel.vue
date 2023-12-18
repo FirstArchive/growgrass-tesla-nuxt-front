@@ -26,9 +26,13 @@ displayArrowText();
         :src="i.img"
         style="height: 100svh"
       />
-      <div
+      <!-- <div
         style="height: 100svh"
         class="flex justify-between absolute flex-col py-24"
+      > -->
+      <UContainer
+        style="height: 100svh"
+        class="w-96 sm:w-[28rem] flex justify-between absolute flex-col py-24"
       >
         <div :class="i.textstyle" class="flex flex-col gap-y-2 items-center">
           <h1 class="font-LineBD tracking-tight" :class="i.titlesize">
@@ -37,8 +41,9 @@ displayArrowText();
           <p>{{ i.description }}</p>
         </div>
         <!-- w-full bottom-24 md:bottom-40 lg:bottom-36 xl:bottom-20 2xl:bottom-32 -->
-        <ButtonSeeOrBuyBtn style="width: 100svh" :MainPageAds1="MainPageAds1" />
-      </div>
+        <ButtonSeeOrBuyBtn
+      /></UContainer>
+      <!-- </div> -->
     </Slide>
     <!-- //FIXME - แก้ Navigation ที่ซ้อนตรงกลางเวลา loop -->
     <template #addons>

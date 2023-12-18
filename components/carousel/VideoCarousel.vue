@@ -18,21 +18,20 @@ displayArrowText();
 <!-- //ANCHOR - use@ /index.vue -->
 <template>
   <Carousel :wrap-around="true" :transition="1000">
-    <Slide v-for="i in MainPageAds2" class="h-30">
+    <Slide v-for="(i, index) in MainPageAds2" :key="index">
       <video-background src="/video/Moon4k.mp4" style="height: 100svh">
-        <div class="h-screen flex flex-col justify-between">
-          <div class="text-white">
-            <h1
-              class="mb-2 mt-24 font-LineBD text-3xl md:text-4xl tracking-tight px-6"
-            >
-              ยินดีต้อนรับสู่ growgrass
-            </h1>
-            <p>พบกับความงามไร้ที่สิ้นสุด</p>
+        <div class="flex justify-center">
+          <div
+            class="h-screen w-96 sm:w-[28rem] flex flex-col items-center justify-between py-24"
+          >
+            <div class="text-white">
+              <h1 class="font-LineBD text-3xl md:text-4xl tracking-tight px-6">
+                ยินดีต้อนรับสู่ growgrass
+              </h1>
+              <p>พบกับความงามไร้ที่สิ้นสุด</p>
+            </div>
+            <UContainer class="w-96"> <ButtonSeeOrBuyBtn /></UContainer>
           </div>
-          <ButtonSeeOrBuyBtn
-            :MainPageAds2="MainPageAds2"
-            class="w-full mb-28"
-          />
         </div>
       </video-background>
     </Slide>

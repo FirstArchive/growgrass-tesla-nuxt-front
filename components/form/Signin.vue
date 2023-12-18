@@ -69,7 +69,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
 <template>
   <!-- USE @ MyForm.vue -->
-  <UContainer class="max-w-xs md:max-w-sm">
+  <UContainer class="w-full">
     <h1 class="text-right text-5xl font-LineBD dark:text-white">Sign In</h1>
     <UDivider
       label="growgrass services"

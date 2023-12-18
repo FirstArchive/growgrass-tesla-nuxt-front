@@ -20,10 +20,11 @@ const isOpen = ref(false);
     >สมัครสมาชิก</UButton
   >
   <UModal v-model="isOpen">
-    <div class="p-4 py-12 h-fit grid items-center">
-      <div class="">
+    <div class="p-4 py-16 grid items-center">
+      <!-- style="height: 80svh" -->
+      <div class="flex flex-col justify-center items-center">
         <FormSignin />
-        <UContainer class="max-w-xs md:max-w-sm">
+        <UContainer class="w-full">
           <UButton
             @click="isOpen = false"
             color="black"
