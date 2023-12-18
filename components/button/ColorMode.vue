@@ -1,7 +1,7 @@
 <template>
   <USelectMenu
     variant="none"
-    v-model="selected"
+    v-model="$colorMode.preference"
     :options="mode"
     placeholder="เลือกโหมด"
     value-attribute="name"
@@ -11,23 +11,23 @@
 
 <script setup>
 const mode = [
+  // {
+  //   id: 1,
+  //   name: "system",
+  //   value: "system",
+  // },
   {
     id: 1,
-    name: "system",
-    value: "system",
-  },
-  {
-    id: 2,
     name: "light",
     value: "light",
   },
   {
-    id: 3,
+    id: 2,
     name: "dark",
     value: "dark",
   },
   {
-    id: 4,
+    id: 3,
     name: "sepia",
     value: "sepia",
   },

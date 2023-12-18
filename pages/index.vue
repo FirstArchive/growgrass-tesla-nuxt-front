@@ -27,7 +27,7 @@ useSeoMeta({
 <template>
   <div
     class="snap-y snap-mandatory overflow-scroll overflow-x-hidden"
-    style="height: 100svh"
+    style="height: 100dvh"
   >
     <div class="snap-start">
       <CarouselPicCarousel />

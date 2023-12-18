@@ -24,14 +24,14 @@ displayArrowText();
       <NuxtImg
         class="carousel__item object-cover object-bottom md:object-right"
         :src="i.img"
-        style="height: 100svh"
+        style="height: 100dvh"
       />
       <!-- <div
         style="height: 100svh"
         class="flex justify-between absolute flex-col py-24"
       > -->
       <UContainer
-        style="height: 100svh"
+        style="height: 100dvh"
         class="w-96 sm:w-[28rem] flex justify-between absolute flex-col py-24"
       >
         <div :class="i.textstyle" class="flex flex-col gap-y-2 items-center">

@@ -24,7 +24,7 @@ const breakpoints = ref({
     <!-- //FIXME - color in dark mode -->
 
     <UButton
-      color="black"
+      color="gray"
       variant="solid"
       class="w-full justify-center scale-100 sm:scale-90"
       size="xl"
@@ -32,7 +32,7 @@ const breakpoints = ref({
       >ดูเพิ่มเติม</UButton
     >
     <UButton
-      color="gray"
+      color="black"
       variant="solid"
       class="w-full justify-center scale-100 sm:scale-90"
       size="xl"
