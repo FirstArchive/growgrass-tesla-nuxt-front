@@ -23,7 +23,7 @@ const darkmode = ref(
   <div
     id="navbar-background"
     :class="darkmode"
-    class="drop-shadow-xl w-full py-7 px-10 lg:px-32 justify-around flex lg:justify-between items-center mx-auto backdrop-blur-sm backdrop-opacity-95 hover:bg-white hover:shadow-md duration-500"
+    class="flex drop-shadow-xl w-full py-7 px-10 lg:px-32 justify-around lg:justify-between items-center mx-auto backdrop-blur-sm backdrop-opacity-95 hover:bg-white hover:shadow-md duration-500"
   >
     <!-- Logo -->
     <div>
@@ -36,7 +36,7 @@ const darkmode = ref(
       <div
         v-for="i in desktopHeader"
         :key="i.alt"
-        class="dark:hover:bg-slate-800 hover:bg-slate-100 hover:cursor-pointer p-1 rounded-md duration-300 relative md:left-[1.75rem] xl:left-[6rem] 2xl:left-[6.5rem]"
+        class="dark:hover:bg-slate-800 hover:bg-slate-100 hover:cursor-pointer p-1 rounded-md duration-300 relative md:left-[1.8rem] xl:left-[7rem] 2xl:left-[7rem]"
       >
         <NuxtLink :to="i.to">
           <span>{{ i.alt }}</span>

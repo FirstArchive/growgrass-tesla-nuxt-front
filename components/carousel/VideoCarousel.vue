@@ -19,7 +19,7 @@ displayArrowText();
 <template>
   <Carousel :wrap-around="true" :transition="1000">
     <Slide v-for="i in MainPageAds2" class="h-30">
-      <video-background src="/video/Moon4k.mp4" style="height: 100dvh">
+      <video-background src="/video/Moon4k.mp4" style="height: 100svh">
         <div class="h-screen flex flex-col justify-between">
           <div class="text-white">
             <h1
@@ -29,7 +29,7 @@ displayArrowText();
             </h1>
             <p>พบกับความงามไร้ที่สิ้นสุด</p>
           </div>
-          <ButtonSeeOrBuyNtn
+          <ButtonSeeOrBuyBtn
             :MainPageAds2="MainPageAds2"
             class="w-full mb-28"
           />

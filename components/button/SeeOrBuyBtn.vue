@@ -19,21 +19,22 @@ const breakpoints = ref({
 <template>
   <UContainer>
     <div
-      class="flex flex-col md:flex-row gap-3 md:gap-5 justify-center items-center drop-shadow-md"
+      class="flex flex-col md:flex-row gap-y-4 md:gap-y-6 justify-center items-center drop-shadow-md"
     >
+      <!-- //FIXME - color in dark mode -->
       <UButton
         color="black"
         variant="solid"
-        class="w-10/12 md:w-2/5 xl:w-1/5 justify-center dark:text-white dark:bg-slate-900 dark:hover:bg-slate-800 duration-200"
-        size="lg"
+        class="w-full max-w-xs justify-center scale-100 sm:scale-90"
+        size="xl"
         @click="isOpen = true"
         >ดูเพิ่มเติม</UButton
       >
       <UButton
-        color="black"
-        variant="soft"
-        class="w-10/12 md:w-2/5 xl:w-1/5 justify-center bg-slate-200 hover:bg-slate-100 duration-200"
-        size="lg"
+        color="gray"
+        variant="solid"
+        class="w-full max-w-xs justify-center scale-100 sm:scale-90"
+        size="xl"
         >สั่งซื้อ</UButton
       >
     </div>
@@ -47,7 +48,7 @@ const breakpoints = ref({
         <!--  v-for="slide in 2" -->
         <Slide v-for="i in MainPageAds1" :key="i.title">
           <div
-            class="py-8 md:py-4 flex items-center justify-center overflow-y-auto"
+            class="p-4 py-12 flex items-center justify-center overflow-y-auto"
           >
             <div class="carousel__item px-10 md:px-20 my-auto items-start">
               <div>

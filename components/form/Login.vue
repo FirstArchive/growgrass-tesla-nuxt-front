@@ -70,7 +70,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
-  <UContainer class="max-w-xs md:max-w-sm">
+  <UContainer class="w-full max-w-md 2xl:max-w-xl px-10">
     <h1 class="text-5xl font-LineBD dark:text-white">Log In</h1>
     <UDivider
       label="growgrass services"

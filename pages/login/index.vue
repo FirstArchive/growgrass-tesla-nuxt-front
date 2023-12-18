@@ -5,7 +5,7 @@ useHead({
 </script>
 <template>
   <div>
-    <div class="pt-[12rem] md:pt-[25rem] xl:pt-[11rem] 2xl:pt-[20rem]">
+    <div class="flex items-center h-screen">
       <FormLogin />
     </div>
   </div>

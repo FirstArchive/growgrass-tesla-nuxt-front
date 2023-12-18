@@ -20,7 +20,7 @@ const isOpen = ref(false);
     >สมัครสมาชิก</UButton
   >
   <UModal v-model="isOpen">
-    <div class="p-4 h-[41rem] md:h-[39rem] grid items-center">
+    <div class="p-4 py-12 h-fit grid items-center">
       <div class="">
         <FormSignin />
         <UContainer class="max-w-xs md:max-w-sm">
