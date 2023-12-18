@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <NuxtPage class="dark:bg-slate-900" style="height: 100lvh" />
+    <NuxtPage class="dark:bg-slate-900" style="height: 100svh" />
   </NuxtLayout>
 </template>
 
