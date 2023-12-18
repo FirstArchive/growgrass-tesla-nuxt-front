@@ -20,7 +20,8 @@ useHead({
 
 <template>
   <div
-    class="w-screen h-screen flex flex-col justify-center items-center dark:text-white"
+    style="height: 100svh"
+    class="w-screen flex flex-col justify-center items-center dark:text-white"
   >
     <div class="font-LineBD text-2xl">ADMIN DASHBOARD</div>
     <div>

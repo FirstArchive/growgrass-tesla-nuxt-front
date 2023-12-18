@@ -46,7 +46,7 @@ useHead({
 </script>
 
 <template>
-  <div class="flex h-screen place-content-center items-center">
+  <div class="flex =place-content-center items-center" style="height: 100svh">
     <span class="font-LineBD text-8xl md:text-9xl">BLOG</span>
   </div>
 </template>

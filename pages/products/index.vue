@@ -19,7 +19,7 @@ useHead({
 </script>
 
 <template>
-  <div class="flex h-screen place-content-center items-center">
+  <div style="height: 100svh" class="flex place-content-center items-center">
     <span class="font-LineBD text-6xl md:text-9xl">PRODUCT</span>
   </div>
 </template>
