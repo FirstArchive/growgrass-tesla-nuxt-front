@@ -16,17 +16,15 @@ const delCookie = () => {
 </script>
 
 <template>
-  <div>
-    <UButton
-      @click="delCookie()"
-      size="sm"
-      color="red"
-      variant="soft"
-      :class="darkmode"
-      class="w-full justify-center duration-200"
-      >Log Out!!</UButton
-    >
-  </div>
+  <UButton
+    @click="delCookie()"
+    size="sm"
+    color="red"
+    variant="soft"
+    :class="darkmode"
+    class="w-full justify-center duration-200"
+    >Log Out!!</UButton
+  >
 </template>
 
 <style scoped></style>

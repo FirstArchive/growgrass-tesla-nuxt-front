@@ -34,6 +34,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   modules: [
+    "@samk-dev/nuxt-vcalendar",
     "@vite-pwa/nuxt",
     "@nuxt/ui",
     "vue3-carousel-nuxt",
