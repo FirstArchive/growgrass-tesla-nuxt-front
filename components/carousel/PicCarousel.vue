@@ -26,14 +26,10 @@ displayArrowText();
         :src="i.img"
         style="height: 100svh"
       />
-      <!-- <div
-        style="height: 100svh"
-        class="flex justify-between absolute flex-col py-24"
-      > -->
-      <!-- style="height: 100lvh" -->
+
       <UContainer
         style="height: 100svh"
-        class="w-96 sm:w-[28rem] flex justify-between absolute flex-col py-14 pt-20"
+        class="w-96 sm:w-[28rem] flex justify-between items-center absolute flex-col py-14 pt-20"
       >
         <div :class="i.textstyle" class="flex flex-col gap-y-2 items-center">
           <h1 class="font-LineBD tracking-tight" :class="i.titlesize">
@@ -42,14 +38,27 @@ displayArrowText();
           <p>{{ i.description }}</p>
         </div>
         <!-- w-full bottom-24 md:bottom-40 lg:bottom-36 xl:bottom-20 2xl:bottom-32 -->
-        <CarouselSeeOrBuyBtn
-          :title="i.btndetail.title"
-          :description="i.btndetail.detail"
-          :testIndex="index"
-      /></UContainer>
+        <div
+          class="flex flex-col gap-y-3 md:flex-row items-center justify-center w-full md:w-80 lg:w-[25rem] xl:w-full"
+        >
+          <CarouselSeeOrBuyBtn
+            :title="i.btndetail.title"
+            :description="i.btndetail.detail"
+          />
+          <UButton
+            :to="i.lineLink"
+            target="_blank"
+            color="black"
+            variant="solid"
+            class="w-full justify-center scale-100 sm:scale-90"
+            size="xl"
+            >สั่งซื้อ</UButton
+          >
+        </div>
+      </UContainer>
       <!-- </div> -->
     </Slide>
-    <!-- //FIXME - แก้ Navigation ที่ซ้อนตรงกลางเวลา loop -->
+
     <template #addons>
       <Navigation />
     </template>

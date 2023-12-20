@@ -17,12 +17,12 @@ displayArrowText();
 </script>
 <!-- //ANCHOR - use@ /index.vue -->
 <template>
-  <Carousel :wrap-around="true" :transition="1000">
-    <Slide v-for="(i, index) in MainPageAds2" :key="index">
+  <Carousel :wrap-around="false" :transition="1000">
+    <Slide v-for="(i, index) in 1" :key="index">
       <video-background src="/video/Moon4k.mp4" style="height: 100dvh">
         <div class="flex justify-center">
           <div
-            class="w-96 sm:w-[28rem] flex flex-col items-center justify-between py-14 pt-24"
+            class="w-96 flex flex-col items-center justify-between py-14 pt-24"
             style="height: 100dvh"
           >
             <div class="text-white">
@@ -31,12 +31,27 @@ displayArrowText();
               </h1>
               <p>พบกับความงามไร้ที่สิ้นสุด</p>
             </div>
-            <UContainer class="w-96"> <CarouselSeeOrBuyBtn /></UContainer>
+            <!-- <UContainer class="w-96"> -->
+            <div
+              class="flex flex-col gap-y-3 md:flex-row items-center justify-center w-[22rem] md:w-80 lg:w-[25rem] xl:w-full"
+            >
+              <CarouselSeeOrBuyBtn />
+              <!-- :to="i.lineLink" -->
+              <UButton
+                target="_blank"
+                color="black"
+                variant="solid"
+                class="w-full justify-center scale-100 sm:scale-90"
+                size="xl"
+                >สั่งซื้อ</UButton
+              >
+            </div>
+            <!-- </UContainer> -->
           </div>
         </div>
       </video-background>
     </Slide>
-    <!-- //FIXME - แก้ Navigation ที่ซ้อนตรงกลางเวลา loop -->
+
     <template #addons>
       <Navigation />
     </template>

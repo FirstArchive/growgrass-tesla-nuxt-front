@@ -1,5 +1,6 @@
 const MainPageAds1 = [
   {
+    lineLink: "",
     textstyle: "text-slate-900",
     img: "/ai-img/aidall11.png",
     title: "ยินดีต้อนรับสู่ growgrass",
@@ -13,6 +14,7 @@ const MainPageAds1 = [
     },
   },
   {
+    lineLink: "https://shop.line.me/@growgrass/collection/185535",
     textstyle: "text-slate-900",
     img: "https://img2.pic.in.th/pic/Z06_8035_23_11zon.webp",
     title: "1cmAA",
@@ -26,6 +28,7 @@ const MainPageAds1 = [
     },
   },
   {
+    lineLink: "https://shop.line.me/@growgrass/collection/185536",
     textstyle: "text-slate-900",
     img: "https://img5.pic.in.th/file/secure-sv1/Z06_8005_15_11zon.webp",
     title: "2cmAA",
@@ -39,6 +42,7 @@ const MainPageAds1 = [
     },
   },
   {
+    lineLink: "https://shop.line.me/@growgrass/collection/185537",
     textstyle: "text-slate-900",
     img: "https://img2.pic.in.th/pic/Z06_7991_10_11zon.webp",
     title: "3cmPM",
@@ -52,6 +56,7 @@ const MainPageAds1 = [
     },
   },
   {
+    lineLink: "https://shop.line.me/@growgrass/collection/185537",
     textstyle: "text-slate-900",
     img: "https://img5.pic.in.th/file/secure-sv1/Z06_7979_6_11zon.webp",
     title: "3.5cmPM",
@@ -82,4 +87,43 @@ const MainPageAds2 = [
   },
 ];
 
-export { MainPageAds1, MainPageAds2 };
+const modalData = [
+  {
+    item1: {
+      id: 1,
+      card1: {
+        title: "card 1 id 1",
+        detail: "card 1 detail 1",
+      },
+      card2: {
+        id: 2,
+        title: "card 2 id card 2",
+        detail: "card 2 detail card 2",
+      },
+      card3: {
+        id: 3,
+        title: "card 3 id card 3",
+        detail: "card 3 detail card 3",
+      },
+    },
+    item2: {
+      id: 2,
+      card1: {
+        title: "card 1 id card 1",
+        detail: "card 1 detail card 1",
+      },
+      card2: {
+        id: 2,
+        title: "card 2 id card 2",
+        detail: "card 2 detail card 2",
+      },
+      card3: {
+        id: 3,
+        title: "card 3 id card 3",
+        detail: "card 3 detail card 3",
+      },
+    },
+  },
+];
+
+export { MainPageAds1, MainPageAds2, modalData };
