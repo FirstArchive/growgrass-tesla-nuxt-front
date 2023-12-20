@@ -1,3 +1,5 @@
+<script setup></script>
+
 <template>
   <NuxtLayout>
     <NuxtPage class="dark:bg-slate-900" style="height: 100dvh" />

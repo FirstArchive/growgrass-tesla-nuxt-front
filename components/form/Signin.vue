@@ -72,7 +72,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   <UContainer class="w-full">
     <h1 class="text-right text-5xl font-LineBD dark:text-white">Sign In</h1>
     <UDivider
-      label="growgrass services"
+      label="ลงทะเบียน growgrass services"
       class="my-3"
       :ui="{ border: { size: { horizontal: 'border-t-2' } } }"
     />

@@ -73,7 +73,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   <UContainer class="w-full max-w-md 2xl:max-w-xl px-10">
     <h1 class="text-5xl font-LineBD dark:text-white">Log In</h1>
     <UDivider
-      label="growgrass services"
+      label="เข้าสู่ระบบ growgrass services"
       class="my-3"
       :ui="{ border: { size: { horizontal: 'border-t-2' } } }"
     />
@@ -101,7 +101,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       :ui="{ border: { size: { horizontal: 'border-t-2' } } }"
     />
     <!-- btntext="สมัครสมาชิก" -->
-    <ButtonSigninBtn />
+    <FormSigninBtn />
   </UContainer>
 </template>
 

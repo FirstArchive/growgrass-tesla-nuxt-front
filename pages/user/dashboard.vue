@@ -1,9 +1,7 @@
 <script setup lang="ts">
-definePageMeta({
-  middleware: ["auth"],
-});
 const cookieEmail = useCookie("email").value;
 const role = useCookie("role");
+defineProps({});
 useHead({
   title: `${role.value} | dashboard`,
   meta: [
@@ -16,6 +14,10 @@ useHead({
       content: "dashboard, หญ้าเทียม, แต่งสวน",
     },
   ],
+});
+definePageMeta({
+  middleware: ["auth"],
+  layout: "user-layout",
 });
 </script>
 
@@ -31,7 +33,7 @@ useHead({
     <div>
       Role : <span class="font-LineBD text-xl">{{ role }}</span>
     </div>
-    <div class="my-4"><ButtonLogoutBtn /></div>
+    <div class="my-4"><FormLogoutBtn /></div>
   </div>
 </template>
 

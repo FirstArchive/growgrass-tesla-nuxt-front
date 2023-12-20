@@ -5,7 +5,7 @@ const darkmode = ref(
 const cookieEmail = useCookie("email");
 const cookiePass = useCookie("pass");
 const cookieRole = useCookie("role");
-console.log(`ก่อนลบ ${cookieEmail.value}, ${cookiePass.value}`);
+// console.log(`ก่อนลบ ${cookieEmail.value}, ${cookiePass.value}`);
 const delCookie = () => {
   cookieEmail.value = "";
   cookiePass.value = "";

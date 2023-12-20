@@ -1,6 +1,11 @@
 <script setup>
 import { MainPageAds1, MainPageAds2 } from "~/data/mainpage";
 
+defineProps({
+  testIndex: Number,
+  title: String,
+  description: String,
+});
 const isOpen = ref(false);
 const breakpoints = ref({
   // 700px and up
@@ -45,12 +50,16 @@ const breakpoints = ref({
       <!--  v-for="slide in 2" -->
       <Slide v-for="i in MainPageAds1" :key="i.title">
         <div style="height: 80svh" class="flex">
-          <div class="p-4 flex items-center justify-center overflow-y-auto">
+          <div
+            class="p-4 py-10 flex items-center justify-center overflow-y-auto"
+          >
             <div class="carousel__item px-10 md:px-20 my-auto items-start">
               <div>
-                <h1 class="text-4xl font-LineBD">{{ i.title }}</h1>
-                <UDivider label="รายละเอียด" class="my-3" />
-                <p class="text-ellipsis">{{ i.description }}</p>
+                <h1 class="text-2xl font-LineBD text-center">{{ title }}</h1>
+                <UDivider label="รายละเอียด" class="my-4" />
+                <p class="text-ellipsis text-left">{{ description }}</p>
+                <UDivider label="test scroll" class="my-4" />
+                <p class="text-ellipsis text-left">{{ description }}</p>
               </div>
             </div>
           </div>

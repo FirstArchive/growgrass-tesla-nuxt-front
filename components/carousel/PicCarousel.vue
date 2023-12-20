@@ -42,7 +42,10 @@ displayArrowText();
           <p>{{ i.description }}</p>
         </div>
         <!-- w-full bottom-24 md:bottom-40 lg:bottom-36 xl:bottom-20 2xl:bottom-32 -->
-        <ButtonSeeOrBuyBtn
+        <CarouselSeeOrBuyBtn
+          :title="i.btndetail.title"
+          :description="i.btndetail.detail"
+          :testIndex="index"
       /></UContainer>
       <!-- </div> -->
     </Slide>

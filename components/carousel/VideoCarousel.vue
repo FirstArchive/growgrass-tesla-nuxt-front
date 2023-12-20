@@ -31,7 +31,7 @@ displayArrowText();
               </h1>
               <p>พบกับความงามไร้ที่สิ้นสุด</p>
             </div>
-            <UContainer class="w-96"> <ButtonSeeOrBuyBtn /></UContainer>
+            <UContainer class="w-96"> <CarouselSeeOrBuyBtn /></UContainer>
           </div>
         </div>
       </video-background>
