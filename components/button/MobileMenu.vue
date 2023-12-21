@@ -55,9 +55,9 @@ const darkmode = ref("dark:text-white ");
           /></NuxtLink>
         </ul>
 
-        <div class="flex flex-col gap-5">
+        <!-- <div class="flex flex-col gap-5">
           <hr />
-          <!-- Role status check -->
+
           <div class="flex justify-end">
             <h1 v-if="getStatus() === 'user'" class="text-right">
               สถานะตอนนี้&nbsp;
@@ -72,7 +72,7 @@ const darkmode = ref("dark:text-white ");
               <span class="font-LineBD text-blue-700">ยังไม่ได้ล็อกอิน</span>
             </h1>
           </div>
-          <!--  -->
+
           <hr />
           <span class="font-LineBD text-3xl text-right">GO DASHBOARD</span>
           <div class="flex items-center gap-4 ml-auto">
@@ -90,7 +90,7 @@ const darkmode = ref("dark:text-white ");
               >ADMIN
             </NuxtLink>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <AppLayoutFooter class="absolute bottom-0" />

@@ -1,5 +1,3 @@
-import { UDivider } from '../../.nuxt/components'; import { _disabled } from
-'../../.nuxt/tailwind.config';
 <script setup lang="ts">
 const cookieEmail = useCookie("email").value;
 const role = useCookie("role");
@@ -50,7 +48,6 @@ const buttonText = computed(() => (Adisable.value ? "แก้ไข" : "ยื�
 </script>
 
 <template>
-  <!-- max-w-md xl:max-w-2xl 2xl:max-w-3xl -->
   <div class="px-10">
     <UContainer class="max-w-md xl:max-w-2xl 2xl:max-w-3xl">
       <div
