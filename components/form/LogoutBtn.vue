@@ -22,7 +22,7 @@ const delCookie = () => {
     color="red"
     variant="soft"
     :class="darkmode"
-    class="w-full justify-center duration-200"
+    class="w-full justify-center duration-200 dark:text-gray-400"
     >Log Out!!</UButton
   >
 </template>
