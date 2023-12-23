@@ -32,8 +32,21 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  ssr: false,
+  ssr: true,
   modules: [
+    [
+      "@nuxtjs/strapi",
+      {
+        url:
+          process.env.STRAPI_URL ||
+          "https://growgrass-backend-219eddb36010.herokuapp.com",
+        prefix: "/api",
+        admin: "/admin",
+        version: "v4",
+        cookie: {},
+        cookieName: "strapi_jwt",
+      },
+    ],
     "@samk-dev/nuxt-vcalendar",
     "@vite-pwa/nuxt",
     "@nuxt/ui",

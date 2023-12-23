@@ -17,6 +17,17 @@ const getStatus = () => {
 const darkmode = ref(
   "dark:hover:bg-slate-950 dark:hover:text-white dark:text-white"
 );
+const router = useRouter();
+const strapiJwt = useCookie("strapi_jwt");
+
+const handleMobileIconClick = () => {
+  if (strapiJwt.value) {
+    router.push("/user/dashboard"); // Navigate to user dashboard if JWT exists
+  } else {
+    alert("กรุณา login ก่อน");
+    router.push("/login"); // Navigate to login page if JWT does not exist
+  }
+};
 </script>
 
 <template>
@@ -44,6 +55,7 @@ const darkmode = ref(
       </div>
     </div>
     <!-- Profile || Icon position right -->
+<<<<<<< HEAD
     <div class="hidden lg:flex">
       <ButtonColorMode class="left-7 md:left-0" />
       <NuxtLink to="/user/dashboard"
@@ -52,6 +64,17 @@ const darkmode = ref(
           dynamic
           class="text-xl"
       /></NuxtLink>
+=======
+    <div class="hidden lg:flex justify-end items-end">
+      <ButtonColorMode class="left-7 md:left-0" />
+      <NuxtLink @click="handleMobileIconClick" class="">
+        <UTooltip text="ดูข้อมูลรับประกัน" :popper="{ arrow: true }">
+          <UIcon
+            name="i-material-symbols-account-circle"
+            dynamic
+            class="mt-1 text-xl" /></UTooltip
+      ></NuxtLink>
+>>>>>>> main
     </div>
     <!-- <div class="flex gap-5 items-center">
     <ButtonColorMode class="left-7 md:left-0" />

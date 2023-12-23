@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { object, string, type InferType } from "yup";
 import type { FormSubmitEvent } from "#ui/types";
+const { login } = useStrapiAuth();
 
 const schema = object({
   email: string()
@@ -27,45 +28,16 @@ const state = reactive({
 });
 const router = useRouter();
 
-const cookieEmail = useCookie("email");
-const cookiePass = useCookie("pass").value;
-const role = useCookie("role");
-
-// const testRoleCheck = () => {
-//   if (cookieEmail != undefined || cookiePass != undefined) {
-//     console.log(cookieEmail.value);
-//     if (!cookiePass) {
-//       console.log("ไม่มี password");
-//     } else {
-//       console.log(cookiePass);
-//     }
-//   } else {
-//     console.log(`cookieEmail not value , cookiePass not value`);
-//   }
-// };
-// testRoleCheck();
-
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  const inputEmail = event.data.email;
-  const inputPassword = event.data.password;
-
-  // user verify เช็คจาก Cookie ด้วย
-  if (inputEmail === cookieEmail.value && inputPassword === cookiePass) {
-    alert(`ยินดีต้อนรับคุณ ${cookieEmail.value} กำลังพาไปหน้า dashboard`);
-    window.location.href = "/user/dashboard";
-    // router.push({ path: "/user/dashboard" });
-    return;
+  const email = state.email;
+  const password = state.password;
+  try {
+    await login({ identifier: email, password: password });
+    // window.location.href = "/user/dashboard";
+    router.push("/user/dashboard");
+  } catch (e: any) {
+    alert(`${e.error.message}: กรุณาตรวจสอบอีเมลล์และรหัสผ่าน`);
   }
-  // admin verify ต้อง user&pass นี้เท่านั้น
-  if (inputEmail === "admin@mail" && inputPassword === "a") {
-    cookieEmail.value = "admin@mail";
-    role.value = "admin";
-    window.location.href = "/admin/dashboard";
-    // router.push({ path: "/admin/dashboard" });
-    return;
-  }
-  // No user || admin verify
-  alert(`ไม่พบข้อมูล ${inputEmail} ในระบบ โปรดสมัครสมาชิก`);
 }
 </script>
 
@@ -74,7 +46,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     <h1 class="text-5xl font-LineBD dark:text-white">Log In</h1>
     <UDivider
       label="เข้าสู่ระบบ growgrass services"
-      class="my-3"
+      class="my-4"
       :ui="{ border: { size: { horizontal: 'border-t-2' } } }"
     />
     <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
@@ -101,7 +73,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       :ui="{ border: { size: { horizontal: 'border-t-2' } } }"
     />
     <!-- btntext="สมัครสมาชิก" -->
-    <FormSigninBtn />
+    <FormRegisterBtn />
   </UContainer>
 </template>
 

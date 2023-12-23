@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const cookieEmail = useCookie("email").value;
-const role = useCookie("role");
+const user = useStrapiUser();
+
 defineProps({});
 useHead({
-  title: `${role.value} | dashboard`,
+  title: `${user.value?.username} | dashboard`,
   meta: [
     {
       name: "description",
@@ -21,17 +21,6 @@ definePageMeta({
 });
 const date = ref(new Date());
 
-const attrs = ref([
-  {
-    key: "today",
-    highlight: {
-      color: "green",
-      fillMode: "solid",
-    },
-    dates: new Date(),
-  },
-]);
-
 const datePlaceholder = computed(() =>
   date.value.toLocaleDateString("th-TH", {
     weekday: "long",
@@ -45,41 +34,84 @@ const toggleDisable = () => {
   Adisable.value = !Adisable.value;
 };
 const buttonText = computed(() => (Adisable.value ? "แก้ไข" : "ยืนยัน"));
+
+const users = {
+  username: user.value?.username,
+  useremail: user.value?.email,
+  phone: user.value?.phone,
+  product: user.value?.product,
+  buydate: user.value?.buydate,
+  YearOfWarranty: user.value?.YearOfWarranty,
+};
+// console.log(users.YearOfWarranty.toString());
+
+// ฟังก์ชันคำนวณวันที่สิ้นสุดการรับประกัน
+const calculateWarrantyEndDate = (buyDate, yearsOfWarranty) => {
+  const buyDateObj = new Date(buyDate);
+  buyDateObj.setFullYear(buyDateObj.getFullYear() + yearsOfWarranty);
+  return buyDateObj;
+};
+
+// Computed property สำหรับแสดงวันที่สิ้นสุดการรับประกัน
+const remainingWarrantyDays = computed(() => {
+  if (users.buydate && users.YearOfWarranty) {
+    const endDate = calculateWarrantyEndDate(
+      users.buydate,
+      users.YearOfWarranty
+    );
+    const today = new Date();
+    const differenceInTime = endDate.getTime() - today.getTime();
+    if (differenceInTime > 0) {
+      // คำนวณเป็นวัน
+      const differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24));
+      return `${differenceInDays} วัน`;
+    }
+    return "หมดระยะเวลารับประกัน";
+  }
+  return "";
+});
 </script>
 
 <template>
+<<<<<<< HEAD
   <div class="px-10">
     <UContainer class="max-w-md xl:max-w-2xl 2xl:max-w-3xl">
+=======
+  <div style="height: 100svh">
+    <UContainer
+      class="flex h-full items-center justify-center max-w-md xl:max-w-2xl 2xl:max-w-3xl"
+    >
+>>>>>>> main
       <div
-        class="p-4 h-screen flex flex-col justify-center items-center dark:text-white"
+        class="flex w-full flex-col justify-center items-center dark:text-white"
       >
-        <div class="font-LineBD text-2xl">ยินดีต้อนรับ!</div>
+        <div class="font-LineBD text-2xl mt-20">ยินดีต้อนรับ!</div>
         <div>
-          <span class="font-LineBD text-xl">K.{{ cookieEmail }}</span>
+          <span class="font-LineBD text-xl">คุณ {{ users.username }}</span>
         </div>
         <UDivider label="ข้อมูลของคุณ" class="my-3" />
         <!--  -->
         <section class="grid xl:grid-cols-2 gap-3 w-full lg:flex-row">
           <UFormGroup label="ชื่อ-นามสกุล"
-            ><UInput size="lg" :disabled="Adisable" placeholder="ชื่อ นามสกุล"
+            ><UInput size="lg" disabled :placeholder="users.username"
           /></UFormGroup>
           <UFormGroup label="อีเมลล์"
-            ><UInput size="lg" :disabled="Adisable" :placeholder="cookieEmail"
+            ><UInput size="lg" disabled :placeholder="users.useremail"
           /></UFormGroup>
           <UFormGroup label="เบอร์โทรศัพท์"
-            ><UInput size="lg" :disabled="Adisable" placeholder="095-484-2976"
+            ><UInput size="lg" disabled :placeholder="users.phone"
           /></UFormGroup>
           <UFormGroup label="รุ่นที่ซื้อ"
-            ><UInput size="lg" :disabled="Adisable" placeholder="3cmPM"
+            ><UInput size="lg" disabled :placeholder="users.product"
           /></UFormGroup>
-          <UFormGroup label="วันที่ซื้อ">
-            <UPopover :popper="{ placement: 'bottom-start' }">
+          <UFormGroup label="วันที่ซื้อ/ติดตั้ง">
+            <UPopover>
               <!-- color="gray" -->
               <UInput
                 size="lg"
-                :disabled="Adisable"
+                disabled
                 icon="i-heroicons-calendar-days-20-solid"
-                :placeholder="datePlaceholder"
+                :placeholder="users.buydate"
                 class="w-full"
               />
 
@@ -88,14 +120,29 @@ const buttonText = computed(() => (Adisable.value ? "แก้ไข" : "ยื�
               </template>
             </UPopover>
           </UFormGroup>
-          <UFormGroup label="ระยะเวลารับประกันที่เหลือ"
-            ><UInput size="lg" disabled placeholder="3ปี"
+          <UFormGroup label="ระยะเวลารับประกัน"
+            ><UInput
+              size="lg"
+              disabled
+              :placeholder="users.YearOfWarranty + ' ปี'"
           /></UFormGroup>
+          <UFormGroup label="เหลือวันรับประกัน">
+            <UPopover>
+              <!-- color="gray" -->
+              <UInput
+                size="lg"
+                disabled
+                icon="i-heroicons-calendar-days-20-solid"
+                :placeholder="remainingWarrantyDays"
+                class="w-full"
+              />
+            </UPopover>
+          </UFormGroup>
         </section>
         <!-- <div>
         Role : <span class="font-LineBD text-xl">{{ role }}</span>
       </div> -->
-        <div v-if="Adisable" class="text-center text-sm">
+        <!-- <div v-if="Adisable" class="text-center text-sm">
           <h1 class="my-3">Profile is update..</h1>
         </div>
         <div v-else class="text-center text-sm">
@@ -104,15 +151,16 @@ const buttonText = computed(() => (Adisable.value ? "แก้ไข" : "ยื�
               >โปรดตรวจสอบข้อมูลให้ถูกต้อง</span
             >
           </h1>
-        </div>
-        <div class="gap-x-4 flex w-full justify-center">
-          <UButton
+        </div> -->
+        <div class="my-6 gap-x-4 flex w-full justify-center">
+          <!-- <UButton
             size="lg"
             :color="[Adisable ? 'primary' : 'red']"
             class="w-1/3 justify-center duration-300"
             @click="toggleDisable"
             >{{ buttonText }}</UButton
-          ><FormLogoutBtn class="w-1/3" />
+          > -->
+          <FormLogoutBtn size="xl" class="w-1/3" />
         </div>
       </div>
     </UContainer>
