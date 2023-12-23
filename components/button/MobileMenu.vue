@@ -15,14 +15,27 @@ const getStatus = () => {
 const isOpen = ref(false);
 
 const darkmode = ref("dark:text-white ");
+
+const router = useRouter();
+const strapiJwt = useCookie("strapi_jwt");
+
+const handleMobileIconClick = () => {
+  if (strapiJwt.value) {
+    router.push("/user/dashboard"); // Navigate to user dashboard if JWT exists
+  } else {
+    alert("กรุณา login ก่อน");
+    router.push("/login"); // Navigate to login page if JWT does not exist
+  }
+};
 </script>
 <!-- use @ Header.vue -->
 <template>
   <div class="flex items-center gap-2 mt-0.5">
+    <ButtonColorMode class="left-6 md:left-0" />
     <UButton @click="isOpen = !isOpen" variant="ghost" color="black">
       <UIcon name="i-ph-list-bold" dynamic class="text-xl" />
     </UButton>
-    <NuxtLink @click="isOpen = false" to="/login" class="flex">
+    <NuxtLink @click="handleMobileIconClick" class="flex">
       <UIcon :name="mobileHeader[2].icon" class="text-xl" dynamic />
     </NuxtLink>
   </div>
@@ -50,14 +63,14 @@ const darkmode = ref("dark:text-white ");
             class="text-4xl w-full"
             >{{ i.alt }}</NuxtLink
           >
-          <NuxtLink @click="isOpen = false" :to="i.to" class="text-4xl">
+          <NuxtLink @click="isOpen = false" class="text-4xl">
             <UIcon :name="i.mobileicon" class="text-xl" dynamic
           /></NuxtLink>
         </ul>
 
-        <div class="flex flex-col gap-5">
+        <!-- <div class="flex flex-col gap-5">
           <hr />
-          <!-- Role status check -->
+
           <div class="flex justify-end">
             <h1 v-if="getStatus() === 'user'" class="text-right">
               สถานะตอนนี้&nbsp;
@@ -72,7 +85,7 @@ const darkmode = ref("dark:text-white ");
               <span class="font-LineBD text-blue-700">ยังไม่ได้ล็อกอิน</span>
             </h1>
           </div>
-          <!--  -->
+
           <hr />
           <span class="font-LineBD text-3xl text-right">GO DASHBOARD</span>
           <div class="flex items-center gap-4 ml-auto">
@@ -90,7 +103,7 @@ const darkmode = ref("dark:text-white ");
               >ADMIN
             </NuxtLink>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <AppLayoutFooter class="absolute bottom-0" />
