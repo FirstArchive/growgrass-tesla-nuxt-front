@@ -73,9 +73,9 @@ const remainingWarrantyDays = computed(() => {
 </script>
 
 <template>
-  <div style="height: 100svh">
+  <div style="height: 100svh" class="pt-10">
     <UContainer
-      class="flex h-full pt-10 items-center justify-center max-w-md xl:max-w-2xl 2xl:max-w-3xl"
+      class="flex h-full items-center justify-center max-w-md xl:max-w-2xl 2xl:max-w-3xl"
     >
       <div
         class="flex w-full flex-col justify-center items-center dark:text-white"
@@ -100,7 +100,7 @@ const remainingWarrantyDays = computed(() => {
             ><UInput size="lg" disabled :placeholder="users.product"
           /></UFormGroup>
           <UFormGroup label="วันที่ซื้อ/ติดตั้ง">
-            <UPopover :popper="{ placement: 'bottom-start' }">
+            <UPopover>
               <!-- color="gray" -->
               <UInput
                 size="lg"
@@ -122,7 +122,7 @@ const remainingWarrantyDays = computed(() => {
               :placeholder="users.YearOfWarranty + ' ปี'"
           /></UFormGroup>
           <UFormGroup label="เหลือวันรับประกัน">
-            <UPopover :popper="{ placement: 'bottom-start' }">
+            <UPopover>
               <!-- color="gray" -->
               <UInput
                 size="lg"
@@ -131,17 +131,13 @@ const remainingWarrantyDays = computed(() => {
                 :placeholder="remainingWarrantyDays"
                 class="w-full"
               />
-
-              <template #panel="{ close }">
-                <VDatePicker v-model="date" />
-              </template>
             </UPopover>
           </UFormGroup>
         </section>
         <!-- <div>
         Role : <span class="font-LineBD text-xl">{{ role }}</span>
       </div> -->
-        <div v-if="Adisable" class="text-center text-sm">
+        <!-- <div v-if="Adisable" class="text-center text-sm">
           <h1 class="my-3">Profile is update..</h1>
         </div>
         <div v-else class="text-center text-sm">
@@ -150,8 +146,8 @@ const remainingWarrantyDays = computed(() => {
               >โปรดตรวจสอบข้อมูลให้ถูกต้อง</span
             >
           </h1>
-        </div>
-        <div class="gap-x-4 flex w-full justify-center">
+        </div> -->
+        <div class="my-6 gap-x-4 flex w-full justify-center">
           <!-- <UButton
             size="lg"
             :color="[Adisable ? 'primary' : 'red']"
@@ -159,7 +155,7 @@ const remainingWarrantyDays = computed(() => {
             @click="toggleDisable"
             >{{ buttonText }}</UButton
           > -->
-          <FormLogoutBtn class="w-1/3" />
+          <FormLogoutBtn size="xl" class="w-1/3" />
         </div>
       </div>
     </UContainer>
