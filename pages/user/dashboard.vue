@@ -73,12 +73,9 @@ const remainingWarrantyDays = computed(() => {
 </script>
 
 <template>
-  <UContainer
-    style="height: 100dvh"
-    class="flex pt-10 items-center justify-center max-w-md xl:max-w-2xl 2xl:max-w-3xl"
-  >
+  <UContainer class="flex items-center justify-center">
     <div
-      class="flex w-full flex-col justify-center items-center dark:text-white"
+      class="flex py-24 h-full w-full flex-col justify-start items-center dark:text-white"
     >
       <div class="font-LineBD text-2xl">ยินดีต้อนรับ!</div>
       <div>
@@ -100,20 +97,14 @@ const remainingWarrantyDays = computed(() => {
           ><UInput size="lg" disabled :placeholder="users.product"
         /></UFormGroup>
         <UFormGroup label="วันที่ซื้อ/ติดตั้ง">
-          <UPopover>
-            <!-- color="gray" -->
-            <UInput
-              size="lg"
-              disabled
-              icon="i-heroicons-calendar-days-20-solid"
-              :placeholder="users.buydate"
-              class="w-full"
-            />
-
-            <template #panel="{ close }">
-              <VDatePicker v-model="date" />
-            </template>
-          </UPopover>
+          <!-- color="gray" -->
+          <UInput
+            size="lg"
+            disabled
+            icon="i-heroicons-calendar-days-20-solid"
+            :placeholder="users.buydate"
+            class="w-full"
+          />
         </UFormGroup>
         <UFormGroup label="ระยะเวลารับประกัน"
           ><UInput
@@ -122,16 +113,14 @@ const remainingWarrantyDays = computed(() => {
             :placeholder="users.YearOfWarranty + ' ปี'"
         /></UFormGroup>
         <UFormGroup label="เหลือวันรับประกัน">
-          <UPopover>
-            <!-- color="gray" -->
-            <UInput
-              size="lg"
-              disabled
-              icon="i-heroicons-calendar-days-20-solid"
-              :placeholder="remainingWarrantyDays"
-              class="w-full"
-            />
-          </UPopover>
+          <!-- color="gray" -->
+          <UInput
+            size="lg"
+            disabled
+            icon="i-heroicons-calendar-days-20-solid"
+            :placeholder="remainingWarrantyDays"
+            class="w-full"
+          />
         </UFormGroup>
       </section>
       <!-- <div>
@@ -147,7 +136,7 @@ const remainingWarrantyDays = computed(() => {
             >
           </h1>
         </div> -->
-      <div class="my-6 gap-x-4 flex w-full justify-center">
+      <div class="pb-10 gap-x-4 flex w-full justify-center">
         <!-- <UButton
             size="lg"
             :color="[Adisable ? 'primary' : 'red']"
@@ -155,7 +144,7 @@ const remainingWarrantyDays = computed(() => {
             @click="toggleDisable"
             >{{ buttonText }}</UButton
           > -->
-        <FormLogoutBtn size="xl" class="w-1/3" />
+        <FormLogoutBtn size="xl" class="w-1/2 mt-10" />
       </div>
     </div>
   </UContainer>
