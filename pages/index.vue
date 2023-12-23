@@ -22,6 +22,12 @@ useSeoMeta({
   ogImage: "/ai-img/aidall9.png",
   twitterCard: "summary_large_image",
 });
+// const { find } = useStrapi();
+
+// const response = await find("blogs");
+// response.data.forEach((element) => {
+//   console.log(element.attributes);
+// });
 </script>
 
 <template>

@@ -17,6 +17,17 @@ const getStatus = () => {
 const darkmode = ref(
   "dark:hover:bg-slate-950 dark:hover:text-white dark:text-white"
 );
+const router = useRouter();
+const strapiJwt = useCookie("strapi_jwt");
+
+const handleMobileIconClick = () => {
+  if (strapiJwt.value) {
+    router.push("/user/dashboard"); // Navigate to user dashboard if JWT exists
+  } else {
+    alert("กรุณา login ก่อน");
+    router.push("/login"); // Navigate to login page if JWT does not exist
+  }
+};
 </script>
 
 <template>
@@ -36,7 +47,7 @@ const darkmode = ref(
       <div
         v-for="i in desktopHeader"
         :key="i.alt"
-        class="dark:hover:bg-slate-800 hover:bg-slate-100 hover:cursor-pointer p-1 rounded-md duration-300 relative md:left-[1.8rem] xl:left-[7rem] 2xl:left-[7rem]"
+        class="dark:hover:bg-slate-800 hover:bg-slate-100 hover:cursor-pointer p-1 rounded-md duration-300 relative md:left-[-2rem] lg:left-[-1rem]"
       >
         <NuxtLink :to="i.to">
           <span>{{ i.alt }}</span>
@@ -44,8 +55,18 @@ const darkmode = ref(
       </div>
     </div>
     <!-- Profile || Icon position right -->
-    <div class="flex gap-5 items-center">
+    <div class="hidden lg:flex justify-end items-end">
       <ButtonColorMode class="left-7 md:left-0" />
+      <NuxtLink @click="handleMobileIconClick" class="">
+        <UTooltip text="ดูข้อมูลรับประกัน" :popper="{ arrow: true }">
+          <UIcon
+            name="i-material-symbols-account-circle"
+            dynamic
+            class="mt-1 text-xl" /></UTooltip
+      ></NuxtLink>
+    </div>
+    <!-- <div class="flex gap-5 items-center">
+    <ButtonColorMode class="left-7 md:left-0" />
       <div
         v-for="i in desktopHeader"
         :key="i.alt"
@@ -54,10 +75,10 @@ const darkmode = ref(
         <NuxtLink :to="i.to">
           <UIcon :name="i.icon" dynamic class="text-xl" />
         </NuxtLink>
-      </div>
+      </div> -->
 
-      <!-- ตรวจสอบสถานะของ role -->
-      <div>
+    <!-- ตรวจสอบสถานะของ role -->
+    <!-- <div>
         <NuxtLink
           to="/user/dashboard"
           v-if="getStatus() === 'user'"
@@ -84,11 +105,11 @@ const darkmode = ref(
             >ยังไม่ได้ล็อกอิน</span
           >
         </NuxtLink>
-      </div>
-      <!-- Mobile menu -->
-      <div class="lg:hidden">
-        <buttonMobileMenu />
-      </div>
+      </div> -->
+    <!-- Mobile menu -->
+    <div class="lg:hidden">
+      <buttonMobileMenu />
     </div>
   </div>
+  <!-- </div> -->
 </template>
