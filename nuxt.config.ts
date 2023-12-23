@@ -32,7 +32,7 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  ssr: false,
+  ssr: true,
   modules: [
     [
       "@nuxtjs/strapi",
@@ -40,8 +40,8 @@ export default defineNuxtConfig({
         url:
           process.env.STRAPI_URL ||
           "https://growgrass-backend-219eddb36010.herokuapp.com",
-        prefix: "api",
-        admin: "admin",
+        prefix: "/api",
+        admin: "/admin",
         version: "v4",
         cookie: {},
         cookieName: "strapi_jwt",
