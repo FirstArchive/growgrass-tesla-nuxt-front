@@ -31,7 +31,10 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="snap-y snap-mandatory overflow-scroll overflow-x-hidden">
+  <div
+    style="height: 100dvh"
+    class="snap-y snap-mandatory overflow-scroll overflow-x-hidden"
+  >
     <div class="snap-start" style="height: 100svh">
       <CarouselPicCarousel />
     </div>

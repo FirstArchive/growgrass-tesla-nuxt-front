@@ -73,71 +73,71 @@ const remainingWarrantyDays = computed(() => {
 </script>
 
 <template>
-  <div style="height: 100svh">
-    <UContainer
-      class="flex h-full items-center justify-center max-w-md xl:max-w-2xl 2xl:max-w-3xl"
+  <UContainer
+    style="height: 100dvh"
+    class="flex pt-10 items-center justify-center max-w-md xl:max-w-2xl 2xl:max-w-3xl"
+  >
+    <div
+      class="flex w-full flex-col justify-center items-center dark:text-white"
     >
-      <div
-        class="flex w-full flex-col justify-center items-center dark:text-white"
-      >
-        <div class="font-LineBD text-2xl mt-20">ยินดีต้อนรับ!</div>
-        <div>
-          <span class="font-LineBD text-xl">คุณ {{ users.username }}</span>
-        </div>
-        <UDivider label="ข้อมูลของคุณ" class="my-3" />
-        <!--  -->
-        <section class="grid xl:grid-cols-2 gap-3 w-full lg:flex-row">
-          <UFormGroup label="ชื่อ-นามสกุล"
-            ><UInput size="lg" disabled :placeholder="users.username"
-          /></UFormGroup>
-          <UFormGroup label="อีเมลล์"
-            ><UInput size="lg" disabled :placeholder="users.useremail"
-          /></UFormGroup>
-          <UFormGroup label="เบอร์โทรศัพท์"
-            ><UInput size="lg" disabled :placeholder="users.phone"
-          /></UFormGroup>
-          <UFormGroup label="รุ่นที่ซื้อ"
-            ><UInput size="lg" disabled :placeholder="users.product"
-          /></UFormGroup>
-          <UFormGroup label="วันที่ซื้อ/ติดตั้ง">
-            <UPopover>
-              <!-- color="gray" -->
-              <UInput
-                size="lg"
-                disabled
-                icon="i-heroicons-calendar-days-20-solid"
-                :placeholder="users.buydate"
-                class="w-full"
-              />
-
-              <template #panel="{ close }">
-                <VDatePicker v-model="date" />
-              </template>
-            </UPopover>
-          </UFormGroup>
-          <UFormGroup label="ระยะเวลารับประกัน"
-            ><UInput
+      <div class="font-LineBD text-2xl">ยินดีต้อนรับ!</div>
+      <div>
+        <span class="font-LineBD text-xl">คุณ {{ users.username }}</span>
+      </div>
+      <UDivider label="ข้อมูลของคุณ" class="my-3" />
+      <!--  -->
+      <section class="grid xl:grid-cols-2 gap-3 w-full lg:flex-row">
+        <UFormGroup label="ชื่อ-นามสกุล"
+          ><UInput size="lg" disabled :placeholder="users.username"
+        /></UFormGroup>
+        <UFormGroup label="อีเมลล์"
+          ><UInput size="lg" disabled :placeholder="users.useremail"
+        /></UFormGroup>
+        <UFormGroup label="เบอร์โทรศัพท์"
+          ><UInput size="lg" disabled :placeholder="users.phone"
+        /></UFormGroup>
+        <UFormGroup label="รุ่นที่ซื้อ"
+          ><UInput size="lg" disabled :placeholder="users.product"
+        /></UFormGroup>
+        <UFormGroup label="วันที่ซื้อ/ติดตั้ง">
+          <UPopover>
+            <!-- color="gray" -->
+            <UInput
               size="lg"
               disabled
-              :placeholder="users.YearOfWarranty + ' ปี'"
-          /></UFormGroup>
-          <UFormGroup label="เหลือวันรับประกัน">
-            <UPopover>
-              <!-- color="gray" -->
-              <UInput
-                size="lg"
-                disabled
-                icon="i-heroicons-calendar-days-20-solid"
-                :placeholder="remainingWarrantyDays"
-                class="w-full"
-              />
-            </UPopover>
-          </UFormGroup>
-        </section>
-        <!-- <div>
+              icon="i-heroicons-calendar-days-20-solid"
+              :placeholder="users.buydate"
+              class="w-full"
+            />
+
+            <template #panel="{ close }">
+              <VDatePicker v-model="date" />
+            </template>
+          </UPopover>
+        </UFormGroup>
+        <UFormGroup label="ระยะเวลารับประกัน"
+          ><UInput
+            size="lg"
+            disabled
+            :placeholder="users.YearOfWarranty + ' ปี'"
+        /></UFormGroup>
+        <UFormGroup label="เหลือวันรับประกัน">
+          <UPopover>
+            <!-- color="gray" -->
+            <UInput
+              size="lg"
+              disabled
+              icon="i-heroicons-calendar-days-20-solid"
+              :placeholder="remainingWarrantyDays"
+              class="w-full"
+            />
+          </UPopover>
+        </UFormGroup>
+      </section>
+      <!-- <div>
         Role : <span class="font-LineBD text-xl">{{ role }}</span>
       </div> -->
-        <!-- <div v-if="Adisable" class="text-center text-sm">
+      <!-- <div v-if="Adisable" class="text-center text-sm">
           <h1 class="my-3">Profile is update..</h1>
         </div>
         <div v-else class="text-center text-sm">
@@ -147,19 +147,18 @@ const remainingWarrantyDays = computed(() => {
             >
           </h1>
         </div> -->
-        <div class="my-6 gap-x-4 flex w-full justify-center">
-          <!-- <UButton
+      <div class="my-6 gap-x-4 flex w-full justify-center">
+        <!-- <UButton
             size="lg"
             :color="[Adisable ? 'primary' : 'red']"
             class="w-1/3 justify-center duration-300"
             @click="toggleDisable"
             >{{ buttonText }}</UButton
           > -->
-          <FormLogoutBtn size="xl" class="w-1/3" />
-        </div>
+        <FormLogoutBtn size="xl" class="w-1/3" />
       </div>
-    </UContainer>
-  </div>
+    </div>
+  </UContainer>
 </template>
 
 <style scoped></style>
