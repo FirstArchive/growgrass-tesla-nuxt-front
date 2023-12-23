@@ -85,16 +85,28 @@ const remainingWarrantyDays = computed(() => {
       <!--  -->
       <section class="grid xl:grid-cols-2 gap-3 w-full lg:flex-row">
         <UFormGroup label="ชื่อ-นามสกุล"
-          ><UInput size="lg" disabled :placeholder="users.username"
+          ><UInput
+            size="lg"
+            disabled
+            :placeholder="users.username || 'ยังไม่มีข้อมูล'"
         /></UFormGroup>
         <UFormGroup label="อีเมลล์"
-          ><UInput size="lg" disabled :placeholder="users.useremail"
+          ><UInput
+            size="lg"
+            disabled
+            :placeholder="users.useremail || 'ยังไม่มีข้อมูล'"
         /></UFormGroup>
         <UFormGroup label="เบอร์โทรศัพท์"
-          ><UInput size="lg" disabled :placeholder="users.phone"
+          ><UInput
+            size="lg"
+            disabled
+            :placeholder="users.phone || 'ยังไม่มีข้อมูล'"
         /></UFormGroup>
         <UFormGroup label="รุ่นที่ซื้อ"
-          ><UInput size="lg" disabled :placeholder="users.product"
+          ><UInput
+            size="lg"
+            disabled
+            :placeholder="users.product || 'ยังไม่มีข้อมูล'"
         /></UFormGroup>
         <UFormGroup label="วันที่ซื้อ/ติดตั้ง">
           <!-- color="gray" -->
@@ -102,7 +114,7 @@ const remainingWarrantyDays = computed(() => {
             size="lg"
             disabled
             icon="i-heroicons-calendar-days-20-solid"
-            :placeholder="users.buydate"
+            :placeholder="users.buydate || 'ยังไม่มีข้อมูล'"
             class="w-full"
           />
         </UFormGroup>
@@ -110,7 +122,12 @@ const remainingWarrantyDays = computed(() => {
           ><UInput
             size="lg"
             disabled
-            :placeholder="users.YearOfWarranty + ' ปี'"
+            icon="i-heroicons-clock"
+            :placeholder="
+              users.YearOfWarranty
+                ? users.YearOfWarranty + ' ปี'
+                : 'ยังไม่มีข้อมูล'
+            "
         /></UFormGroup>
         <UFormGroup label="เหลือวันรับประกัน">
           <!-- color="gray" -->
@@ -118,7 +135,7 @@ const remainingWarrantyDays = computed(() => {
             size="lg"
             disabled
             icon="i-heroicons-calendar-days-20-solid"
-            :placeholder="remainingWarrantyDays"
+            :placeholder="remainingWarrantyDays || 'ยังไม่มีข้อมูล'"
             class="w-full"
           />
         </UFormGroup>
