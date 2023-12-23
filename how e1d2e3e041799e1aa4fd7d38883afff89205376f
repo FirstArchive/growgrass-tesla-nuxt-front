@@ -1,0 +1,174 @@
+[33mcommit e1d2e3e041799e1aa4fd7d38883afff89205376f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: 99bbab9 bc5129d
+Author: first <firstarchive1@outlook.com>
+Date:   Fri Dec 22 03:16:51 2023 +0700
+
+    Merge branch 'develop'
+
+[33mcommit bc5129d7342469309a8570b1e5eaf7083d3f4fc1[m[33m ([m[1;32mdevelop[m[33m)[m
+Author: first <firstarchive1@outlook.com>
+Date:   Fri Dec 22 03:15:50 2023 +0700
+
+    firebase v1.0 | Start using firbase
+
+[33mcommit 83d389c81ce75aeb16185bd6c6b983dbf33a8bd1[m
+Author: first <firstarchive1@outlook.com>
+Date:   Thu Dec 21 06:08:18 2023 +0700
+
+    Edit user dashboard layout flex to grid 2section
+
+[33mcommit 99bbab966abaea1059c429622c541186b9130deb[m
+Author: first <firstarchive1@outlook.com>
+Date:   Thu Dec 21 05:46:57 2023 +0700
+
+    v1.6 | Start edit user dashboard form
+
+[33mcommit acfa8a507513c492622e72bd3301426169174d55[m
+Author: first <firstarchive1@outlook.com>
+Date:   Thu Dec 21 05:43:48 2023 +0700
+
+    Start edit user dashboard
+
+[33mcommit 14034bcbfcabfc11c2e092758e0ca0167219c526[m
+Author: first <firstarchive1@outlook.com>
+Date:   Thu Dec 21 04:19:37 2023 +0700
+
+    Fix modal on Pic/Video-carousel.vue ,Link buy btn to line myshop ,Fix a little style modal
+
+[33mcommit 7f48631a8880bdc1a42be5d7af2c18480d7bd8fb[m
+Author: first <firstarchive1@outlook.com>
+Date:   Wed Dec 20 22:42:23 2023 +0700
+
+    Finally, I'm able to separate and send the ID of each model independently.
+
+[33mcommit b6d303a6cfc156502f8a24ec8811116442db856e[m
+Author: first <firstarchive1@outlook.com>
+Date:   Tue Dec 19 17:42:36 2023 +0700
+
+    final first page responsive slide up to down
+
+[33mcommit 1f8d5438b513e1230ba73ed0668084b782d48683[m
+Author: first <firstarchive1@outlook.com>
+Date:   Tue Dec 19 17:36:35 2023 +0700
+
+    v1.5.8 | test view port
+
+[33mcommit b2001b094007c13243653edf111b0ed46c1b67b2[m
+Author: first <firstarchive1@outlook.com>
+Date:   Mon Dec 18 23:53:32 2023 +0700
+
+    v1.5.7 | test view port
+
+[33mcommit 2d740771e36a83cfb4b9c4d72c992c9e9411a6d5[m
+Author: first <firstarchive1@outlook.com>
+Date:   Mon Dec 18 23:41:46 2023 +0700
+
+    v1.5.6 | test view port
+
+[33mcommit dc427442253b996e999a3335d4672ea219ce89ef[m
+Author: first <firstarchive1@outlook.com>
+Date:   Mon Dec 18 23:36:44 2023 +0700
+
+    v1.5.5 | test view port
+
+[33mcommit 0201fc9887963d4a060a58daf1678df54df14a9c[m
+Author: first <firstarchive1@outlook.com>
+Date:   Mon Dec 18 23:30:06 2023 +0700
+
+    v1.5.4 | test view port
+
+[33mcommit 0ea35dcedc821654e930053b9fed64e93eb9b6d7[m
+Author: first <firstarchive1@outlook.com>
+Date:   Mon Dec 18 23:21:15 2023 +0700
+
+    v1.5.3 | test view port
+
+[33mcommit 5f623dc81e6de38382e9f6adca03d01be06f6da9[m
+Author: first <firstarchive1@outlook.com>
+Date:   Mon Dec 18 23:18:54 2023 +0700
+
+    v1.5.2 | test view port
+
+[33mcommit e0e9a91500268f147e05ac67d3076bb64d1fc929[m
+Author: first <firstarchive1@outlook.com>
+Date:   Mon Dec 18 23:10:05 2023 +0700
+
+    v1.5.1 | test view port
+
+[33mcommit 9a292a629c3d65afdaeac9df57c90c7441bd7efa[m
+Author: first <firstarchive1@outlook.com>
+Date:   Mon Dec 18 22:49:09 2023 +0700
+
+    Merge to main 1
+
+[33mcommit 9e5b9e5e2ef9b6765b50a2cc0dbff7840bcd3277[m
+Author: first <firstarchive1@outlook.com>
+Date:   Mon Dec 18 22:33:48 2023 +0700
+
+    Switch to main
+
+[33mcommit a0e144473c348bd703b96d918028b646c56ef6cc[m
+Author: first <firstarchive1@outlook.com>
+Date:   Mon Dec 18 22:22:28 2023 +0700
+
+    Fix width and height of modal
+
+[33mcommit d485d9ea87a06ae14b17b5af3721e9d5bc08a0da[m
+Author: first <firstarchive1@outlook.com>
+Date:   Mon Dec 18 19:01:18 2023 +0700
+
+    Test width button and Alignment center
+
+[33mcommit 17fa03285fdb1faa365a5e2c96d6e38769d5f7b9[m
+Author: first <firstarchive1@outlook.com>
+Date:   Mon Dec 18 04:07:04 2023 +0700
+
+    Fix 'single root node' bug & Split MyCarousel to Pic and Video carousel
+
+[33mcommit 0ea91911ff6e54e376f6860690049c1ebc86b861[m
+Author: first <firstarchive1@outlook.com>
+Date:   Sun Dec 17 16:08:58 2023 +0700
+
+    Manage all Data file del unuse props & Try use svh instead of vh.
+
+[33mcommit c7574059f4b74e0ab26b3ab629779df848829d28[m
+Author: first <firstarchive1@outlook.com>
+Date:   Sun Dec 17 01:27:17 2023 +0700
+
+    Test git branch 'develop'
+
+[33mcommit b6c8097feb03547ff9e08fa115f63d3ad58da2c7[m
+Author: first <firstarchive1@outlook.com>
+Date:   Sun Dec 17 01:07:01 2023 +0700
+
+    dev-v1.4.01 | Comment old photo carousel because show only background video
+
+[33mcommit 4cb2e0698dfbf263da271692eb36228a1f0016bf[m
+Author: first <firstarchive1@outlook.com>
+Date:   Sat Dec 16 23:47:29 2023 +0700
+
+    dev-v1.4 | Test video in backgroud it's work!!
+
+[33mcommit 7b139d5a28981aa4a46896d643469403f6b820eb[m
+Author: first <firstarchive1@outlook.com>
+Date:   Sat Dec 16 18:26:04 2023 +0700
+
+    dev-v1.3 | Add clear cookie button in all dashboard & Start fix content in modal on first page
+
+[33mcommit 1518848a61c0c0417fccde609cf4cb19e42d109b[m
+Author: first <firstarchive1@outlook.com>
+Date:   Sat Dec 16 02:18:49 2023 +0700
+
+    dev-v1.2 | Fix show role status on navbar & Test PWA but not work at now
+
+[33mcommit 056df098f6576c1e547f3083a79954b3e7e2cc1d[m
+Author: first <firstarchive1@outlook.com>
+Date:   Sat Dec 16 01:06:15 2023 +0700
+
+    dev-v1.1 | del navigation in MyCarousel.vue & add useHead title
+
+[33mcommit 5493956733495d9807bf4b58126cb282e13cc8f4[m
+Author: first <firstarchive1@outlook.com>
+Date:   Sat Dec 16 00:37:08 2023 +0700
+
+    dev-v1.0 #before Fix navigation in MyCarousel.vue
