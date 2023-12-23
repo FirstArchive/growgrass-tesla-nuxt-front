@@ -73,10 +73,9 @@ const remainingWarrantyDays = computed(() => {
 </script>
 
 <template>
-  <div>
+  <div style="height: 100svh">
     <UContainer
-      style="height: 100dvh"
-      class="pt-10 flex items-center justify-center max-w-md xl:max-w-2xl 2xl:max-w-3xl"
+      class="flex h-full pt-10 items-center justify-center max-w-md xl:max-w-2xl 2xl:max-w-3xl"
     >
       <div
         class="flex w-full flex-col justify-center items-center dark:text-white"
@@ -89,32 +88,23 @@ const remainingWarrantyDays = computed(() => {
         <!--  -->
         <section class="grid xl:grid-cols-2 gap-3 w-full lg:flex-row">
           <UFormGroup label="ชื่อ-นามสกุล"
-            ><UInput
-              size="lg"
-              :disabled="Adisable"
-              :placeholder="users.username"
+            ><UInput size="lg" disabled :placeholder="users.username"
           /></UFormGroup>
           <UFormGroup label="อีเมลล์"
-            ><UInput
-              size="lg"
-              :disabled="Adisable"
-              :placeholder="users.useremail"
+            ><UInput size="lg" disabled :placeholder="users.useremail"
           /></UFormGroup>
           <UFormGroup label="เบอร์โทรศัพท์"
-            ><UInput size="lg" :disabled="Adisable" :placeholder="users.phone"
+            ><UInput size="lg" disabled :placeholder="users.phone"
           /></UFormGroup>
           <UFormGroup label="รุ่นที่ซื้อ"
-            ><UInput
-              size="lg"
-              :disabled="Adisable"
-              :placeholder="users.product"
+            ><UInput size="lg" disabled :placeholder="users.product"
           /></UFormGroup>
           <UFormGroup label="วันที่ซื้อ/ติดตั้ง">
             <UPopover :popper="{ placement: 'bottom-start' }">
               <!-- color="gray" -->
               <UInput
                 size="lg"
-                :disabled="Adisable"
+                disabled
                 icon="i-heroicons-calendar-days-20-solid"
                 :placeholder="users.buydate"
                 class="w-full"
@@ -136,7 +126,7 @@ const remainingWarrantyDays = computed(() => {
               <!-- color="gray" -->
               <UInput
                 size="lg"
-                :disabled="Adisable"
+                disabled
                 icon="i-heroicons-calendar-days-20-solid"
                 :placeholder="remainingWarrantyDays"
                 class="w-full"
