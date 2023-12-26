@@ -86,7 +86,7 @@ const PrivacyAndTerms = {
                     },
                 ]">
                     <template #partOne>
-                        <div class="mx-3 mb-4 flex flex-col gap-3">
+                        <div class="mx-4 mb-4 flex flex-col gap-3">
                             <div><span class="font-LineBD">กรุณาทำความเข้าใจเกี่ยวกับการดำเนินการที่เกี่ยวข้อง
                                 </span>พร้อมทั้งข้อมูลส่วน
                                 ตัวของท่าน
@@ -250,19 +250,19 @@ const PrivacyAndTerms = {
                         </div>
                     </template>
                     <template #partTwo>
-                        <div class="mx-3 mb-4 flex flex-col gap-3">
-                            <ol class="list-disc list-inside flex flex-col gap-3">
-                                <li>สิทธิ์ขอถอนความยินยอม</li>
-                                <li>สิทธิ์ขอเข้าถึงข้อมูล</li>
-                                <li>สิทธิ์ขอคัดค้าน</li>
-                                <li>สิทธื์ขอให้ลบหรือทำลายข้อมูล</li>
-                                <li>สิทธิ์ขอให้ระงับการใช้ข้อมูล</li>
-                                <li>ขอให้แก้ไขข้อมูล</li>
+                        <div class="mx-4 mb-4 flex flex-col gap-3">
+                            <ol class="list-inside flex flex-col gap-3">
+                                <li><span class="font-LineBD">2.1.</span>&nbsp;สิทธิ์ขอถอนความยินยอม</li>
+                                <li><span class="font-LineBD">2.2.</span>&nbsp;สิทธิ์ขอเข้าถึงข้อมูล</li>
+                                <li><span class="font-LineBD">2.3.</span>&nbsp;สิทธิ์ขอคัดค้าน</li>
+                                <li><span class="font-LineBD">2.4.</span>&nbsp;สิทธื์ขอให้ลบหรือทำลายข้อมูล</li>
+                                <li><span class="font-LineBD">2.5.</span>&nbsp;สิทธิ์ขอให้ระงับการใช้ข้อมูล</li>
+                                <li><span class="font-LineBD">2.6.</span>&nbsp;ขอให้แก้ไขข้อมูล</li>
                             </ol>
                         </div>
                     </template>
                     <template #partThree>
-                        <div class="mx-3 mb-4 flex flex-col gap-3">
+                        <div class="mx-4 mb-4 flex flex-col gap-3">
                             <p class="indent-3 ">
                                 <span class="font-LineBD">เราจะไม่ใช้ข้อมูลส่วนตัวของคุณ</span>
                                 เพื่อวัตถุประสงค์ใดที่เป็นการกระทบกระเทือนหรือสร้างความเดือดร้อนต่อความเป็นส่วนตัวของคุณนอกจากให้บริการหรือเท่าที่กฎหมายกำหนดเราเคารพและคำนึงถึงความเป็นส่วนตัวของลูกค้าของเราอย่างสูงสุดสิ่งที่สำคัญที่สุดคือความสัมพันธ์ระหว่างคุณและเราเราต้องการให้คุณสบายใจและมั่นใจใช้ผลิตภัณฑ์และบริการของเราและเชื่อถือความปลอดภัยของข้อมูลส่วนตัวและแบบแสดงรายการที่คุณกรอกไว้ให้เรา
@@ -275,7 +275,7 @@ const PrivacyAndTerms = {
                         </div>
                     </template>
                     <template #partFour>
-                        <div class="mx-3 flex flex-col gap-3">
+                        <div class="mx-4 flex flex-col gap-3">
                             <p class="indent-3 ">
                                 <span class="font-LineBD">เพราะข้อมูลของคุณเป็นสิ่งที่มีค่ามาก</span>
                                 ที่สุดเราให้ความสำคัญกับความเชื่อมั่นของคุณเป็นอันดับหนึ่งสำหรับเราเราละลึกอยู่เสมอว่าคุณต้องการความปลอดภัยสูงสุดในการใช้บริการและรักษาความลับของข้อมูลส่วนตัวเราจึงดำเนินการอย่างเข้มงวดเพื่อรักษาความปลอดภัยและป้องกันการนำข้อมูลของคุณโดยไม่ได้รับอนุญาตด้วยมาตรฐานขั้นสูง
@@ -304,7 +304,7 @@ const PrivacyAndTerms = {
     </UModal>
     <!-- เงื่อนไขและข้อกำหนดการรับประกัน -->
     <UModal v-model="termsModal" prevent-close>
-        <UCard style="height: 80dvh" class="overflow-y-scroll" :ui="{
+        <UCard style="height: 95dvh" class="overflow-y-scroll" :ui="{
             ring: '',
             divide: 'divide-y divide-gray-100 dark:divide-gray-800',
         }">
@@ -346,9 +346,10 @@ const PrivacyAndTerms = {
                     },
                 ]">
                     <template #partOne>
-                        <div class="mx-3 mb-4">
-                            <ol class="list-disc list-inside flex flex-col gap-3">
+                        <div class="mx-4 mb-4">
+                            <ol class="list-inside flex flex-col gap-3">
                                 <li>
+                                    <span class="font-LineBD">1.1.</span>
                                     ร้านหญ้าเทียมโกรวกลาส(Growgrass) ขอรับประกันคุณภาพหญ้าเทียม
                                     ต่อผู้ซื้อที่ได้ลงทะเบียนหรือประกันไว้กับทางร้านอย่างถูกต้องตามระเบียบเท่านั้น
                                     โดยเริ่มนับจากวันที่สินค้าได้มีการซื้อขาย หรือ ติดตั้ง
@@ -357,12 +358,14 @@ const PrivacyAndTerms = {
                                 </li>
 
                                 <li>
+                                    <span class="font-LineBD">1.2.</span>
                                     กรุณากรอกข้อความให้ชัดเจนและส่งภายใน 7 วัน
                                     หลังจากวันที่ซื้อหากเกินกำหนดดังกล่าว
                                     ทางร้านจะถือว่าท่านสละสิทธิ์
                                 </li>
 
                                 <li>
+                                    <span class="font-LineBD">1.3.</span>
                                     การรับประกันนี้ จะรับประกันเฉพาะผลิตภัณฑ์ที่GrowGrass
                                     เป็นผู้ผลิตหรือนำเข้ามาจำหน่าย เมื่อมีการขัดข้องเสียหายใดๆ
                                     อันเนื่องมาจากความบกพร่องของโรงงานหรือชำรุดบกพร่องในระบบการทำงาน
@@ -370,16 +373,19 @@ const PrivacyAndTerms = {
                                 </li>
 
                                 <li>
+                                    <span class="font-LineBD">1.4.</span>
                                     ผู้ซื้อไม่ต้องเสียค่าใช้จ่ายใดๆ
                                     โดยมีเงื่อนไขว่าผู้ซื้อต้องมอบชิ้นส่วนที่ชำรุดบกพร่องของผลิตภัณฑ์นั้นตามที่ปรากฎจริงคืนแก่เจ้าหน้าที่ของบริษัทฯ
                                     เท่านั้น
                                 </li>
 
                                 <li>
+                                    <span class="font-LineBD">1.5.</span>
                                     การรับประกันไม่รวมถึงค่าเดินทางหรือค่าพาหนะในการบริการนอกสถานที่
                                 </li>
 
                                 <li>
+                                    <span class="font-LineBD">1.6.</span>
                                     ผู้ซื้อต้องแสดงหลักฐานการประกันแก่ทางร้านทุกครั้ง
                                     มิฉะนั้นร้านจะคิดค่าใช้จ่ายในการซ่อมแซ่ม
                                 </li>
@@ -387,7 +393,7 @@ const PrivacyAndTerms = {
                         </div>
                     </template>
                     <template #partTwo>
-                        <div class="mx-3 mb-4 flex flex-col gap-3">
+                        <div class="mx-4 mb-4 flex flex-col gap-3">
                             <p class="indent-3">
                                 <span class="font-LineBD">
                                     ร้านหญ้าเทียมโกรวกลาส(Growgrass)
@@ -418,44 +424,52 @@ const PrivacyAndTerms = {
                         </div>
                     </template>
                     <template #partThree>
-                        <div class="mx-3 mb-4 flex flex-col gap-3">
+                        <div class="mx-4 mb-4 flex flex-col gap-3">
                             <p class="indent-3 font-LineBD">
                                 การรับประกันสินค้าจะไม่ครอบคลุมในกรณีดังต่อไปนี้
                                 (อาจต้องมีค่าใช้จ่ายในการซ่อมหรือเปลี่ยนสินค้ารวมถึงกรณีที่ไม่อาจเปลี่ยนหรือซ่อมได้)
                             </p>
                             <UDivider />
-                            <ol class="mx-4 list-disc list-inside flex flex-col gap-3">
+                            <ol class="mx-4 list-inside flex flex-col gap-3">
                                 <li>
+                                    <span class="font-LineBD">3.1.</span>
                                     การรับประกันนี้ไม่ครอบคลุมถึงข้อบกพร่องที่เกิดจากการปรับหน้าดินที่ไม่ดี
                                     (ในกรณีที่ลูกค้าทำการปรับหน้าดินเอง) อุปกรณ์เสริมในการติดตั้ง
                                     หรือความผิดพลาดที่อยู่โดยการออกแบบที่เหมาะสม
                                 </li>
                                 <li>
+                                    <span class="font-LineBD">3.2.</span>
                                     การรับประกันไม่รวมถึงข้อบกพร่องในการระบายน้ำ (น้ำขัง )
                                     ที่เกิดจากการปรับหน้าดินที่ไม่เหมาะสม
                                 </li>
-                                <li>ความเสียหายอันเนื่องจากสัตว์ต่างๆ</li>
+                                <li><span class="font-LineBD">3.3.</span>ความเสียหายอันเนื่องจากสัตว์ต่างๆ</li>
                                 <li>
+                                    <span class="font-LineBD">3.4.</span>
                                     ความเสียหายโดยเจตนาของผู้ใช้งานเองและสาเหตุจากการไม่ระมัดระวังของผู้ใช้งาน
                                 </li>
                                 <li>
+                                    <span class="font-LineBD">3.5.</span>
                                     กรณีเปลี่ยนสินค้าที่เสียหรือเคลมสินค้า
                                     ขอสงวนสิทธิ์ในการเปลี่ยนเป็นรุ่นเดิมเท่านั้นหากต้องการรุ่นอื่นต้องมีชำระส่วนต่างเพิ่มเติมด้วย
                                 </li>
                                 <li>
+                                    <span class="font-LineBD">3.6.</span>
                                     หญ้าเทียมโกรวกลาสไม่รับประกันว่าหญ้าเทียมจะเสื่อมสภาพจากการสึกหรอตามปกติการรับประกันนี้ไม่รวมถึงข้อบกพร่องที่เกิดจากสภาพของปัจจัยที่อยู่นอกเหนือการควบคุมของร้านโกรวกลาส
                                     (เช่น อุทกภัย อัคคีภัย หรือภัยธรรมชาติอื่นๆ)
                                 </li>
                                 <li>
+                                    <span class="font-LineBD">3.7.</span>
                                     ความเสียหายที่เกิดจากการจงใจทำลายละเลยการดูแลหรือการสวมใส่รองเท้าที่มีพื้นไม่เหมาะสม
                                     ก็ไม่อยู่ภายใต้การรับประกันเช่นเดียวกัน
                                 </li>
                                 <li>
+                                    <span class="font-LineBD">3.8.</span>
                                     หญ้าเทียมชำรุดเพราะถูกใช้ในทางที่ผิดจุดประสงค์ที่ออกแบบไว้
                                     หญ้าเทียมถูกดัดแปลง
                                     ต่อเติมแก้ไขซ่อมแซมโดยช่างที่ไม่ใช่ตัวแทนของบริษัทฯ
                                 </li>
                                 <li>
+                                    <span class="font-LineBD">3.9.</span>
                                     รอยขีดข่วน สนิม รอยฉีก ขาด
                                     ที่เกิดจากการถูกกระทบหรือถูกกดทับด้วยวัตถุต่างๆ หรือ
                                     ถูกสารเคมี และเกิดภัยธรรมชาติ
@@ -465,7 +479,7 @@ const PrivacyAndTerms = {
                         </div>
                     </template>
                     <template #partFour>
-                        <div class="mx-3 flex flex-col gap-3">
+                        <div class="mx-4 flex flex-col gap-3">
                             <p class="indent-3 font-LineBD">
                                 คำแนะนำในการบำรุงรักษาพื้นผิวหญ้าเทียมอย่างเหมาะสมตามที่ระบุไว้ด้านล่าง
                                 และการดูแลบำรุงรักษาเพิ่มเติม
