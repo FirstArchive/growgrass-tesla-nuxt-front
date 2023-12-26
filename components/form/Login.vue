@@ -44,34 +44,22 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 <template>
   <UContainer class="w-full max-w-md 2xl:max-w-xl px-10">
     <h1 class="text-5xl font-LineBD dark:text-white">Log In</h1>
-    <UDivider
-      label="เข้าสู่ระบบ growgrass services"
-      class="my-4"
-      :ui="{ border: { size: { horizontal: 'border-t-2' } } }"
-    />
-    <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
+    <UDivider label="เข้าสู่ระบบ growgrass services" class="my-5"
+      :ui="{ border: { size: { horizontal: 'border-t-2' } } }" />
+    <UForm :schema="schema" :state="state" class="space-y-2 " @submit="onSubmit">
       <UFormGroup label="Email" name="email">
         <UInput size="lg" v-model="state.email" type="email" />
       </UFormGroup>
-      <UFormGroup label="Password" name="password">
+      <UFormGroup label="Password" name="password" class="pb-2">
         <UInput size="lg" v-model="state.password" type="password" />
       </UFormGroup>
 
-      <UButton
-        type="submit"
-        size="lg"
-        :disabled="!isValid"
-        :class="{ 'cursor-not-allowed': !isValid }"
-        class="font-LineRG w-full justify-center"
-      >
+      <UButton type="submit" size="lg" :disabled="!isValid" :class="{ 'cursor-not-allowed': !isValid }"
+        class="font-LineRG w-full justify-center">
         เข้าสู่ระบบ
       </UButton>
     </UForm>
-    <UDivider
-      label="OR"
-      class="my-3"
-      :ui="{ border: { size: { horizontal: 'border-t-2' } } }"
-    />
+    <UDivider label="OR" class="my-2" :ui="{ border: { size: { horizontal: 'border-t-2' } }, label: 'text-xs' }" />
     <!-- btntext="สมัครสมาชิก" -->
     <FormRegisterBtn />
   </UContainer>

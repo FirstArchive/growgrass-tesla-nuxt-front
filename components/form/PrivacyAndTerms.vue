@@ -29,7 +29,7 @@ const PrivacyAndTerms = {
                 </a>
                 <span>&nbsp;และ&nbsp;</span>
                 <a @click="termsModal = true" class="text-green-600 p-0 m-0 cursor-pointer hover:underline" variant="link">
-                    {{ PrivacyAndTerms.terms.title }}
+                    {{ PrivacyAndTerms.terms.title }}&nbsp;
                 </a>
                 <span>ของ growgrass เรียบร้อยแล้ว</span>
             </template>
@@ -39,10 +39,8 @@ const PrivacyAndTerms = {
     <!-- //NOTE - ส่วน Modal -->
     <!-- คำชี้แจงสิทธิ์ส่วนบุคคล -->
     <UModal v-model="privacyModal" prevent-close>
-        <UCard style="height: 95dvh" class="overflow-y-scroll" :ui="{
-            ring: '',
-            divide: 'divide-y divide-gray-100 dark:divide-gray-800',
-        }">
+        <UCard :class="['h-[95dvh]', 'md:h-[70dvh]', 'xl:h-[90dvh]']" class="overflow-y-scroll"
+            :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800', }">
             <template #header>
                 <div class="flex items-center justify-between">
                     <h3 class="text-base font-LineBD leading-6 text-gray-900 dark:text-white">
@@ -55,12 +53,12 @@ const PrivacyAndTerms = {
             <!-- modal content -->
             <div class="dark:text-gray-200">
                 <p class="font-LineBD text-2xl">นโยบายความเป็นส่วนตัว</p>
-                <p class="">
+                <p class="mt-2">
                     เราเข้าใจถึงความสำคัญของสิทธิส่วนบุคคลเป็นอย่างมาก
                     เราขอยืนยันการเก็บรักษาข้อมูลส่วนตัวของท่านไว้เป็นความลับอย่างดีที่สุด
                 </p>
                 <br>
-                <p class="">กรุณาอ่านรายละเอียด และ
+                <p class="">กรุณาอ่านรายละเอียดและ
                     กรุณาทำความเข้าใจเกี่ยวกับการดำเนินการที่เกี่ยวข้องพร้อมทั้งข้อมูลส่วนตัวของท่าน
                     ซึ่งนโยบายเหล่านี้อาจมีการเปลี่ยนแปลงได้โดยไม่จำเป็นต้องแจ้งให้ท่านทราบล่วงหน้า ดังนั้น
                     โปรดกรุณาติดตาม และ ตรวจสอบการเปลี่ยนแปลงอย่างสม่ำเสมอ</p>
@@ -181,7 +179,7 @@ const PrivacyAndTerms = {
                                     <div class="indent-4">เราจะเก็บรวบรวมข้อมูลชื่อ นามสกุล ที่อยู่ อีเมล์ วันเดือน ปี เกิด
                                         ทางสมาชิกระบุความต้องการที่จะรับทราบข้อมูลกิจกรรม และข่าวสารของทางร้าน
                                         เราจะแจ้งข้อมูลต่างๆ ไปยังท่านทางจดหมายอิเล็คทรอนิกส์เกี่ยวกับข้อมูลต่างๆ
-                                        หากสมาชิกท่านใดไม่ต้องการรับทราบข้อมูลข่าวสารใด ๆ จากทาง ไฮเพียวริฟาย
+                                        หากสมาชิกท่านใดไม่ต้องการรับทราบข้อมูลข่าวสารใด ๆ จากทาง growgrass
                                         กรุณาอย่าติ๊กถูกในขั้นตอนการสมัครสมาชิกหมวดข้อมูลส่วนตัวของคุณ เราอาจถามซ้ำจาก
                                         E-mail address ของท่าน อีกครั้งเพื่อเสนอสิทธิประโยชน์ต่างๆ เช่น
                                         คูปองส่วนลดการซื้อสินค้า
@@ -221,7 +219,7 @@ const PrivacyAndTerms = {
                                         สมาชิกต้องมีรหัสผ่านเพื่อเข้าสู่ข้อมูลส่วนตัวของท่าน
                                         สมาชิกจึงเป็นผู้เดียวที่สามารถเข้าถึงข้อมูลส่วนตัวเหล่านั้นได้ ท่านอาจแก้ไข ปรับปรุง
                                         เปลี่ยนแปลงข้อมูลเหล่านั้นได้โดยการใช้ Login name และ Password ของสมาชิกเอง ทาง
-                                        ไฮเพียวริฟาย ขอแนะนำให้สมาชิกเก็บข้อมูลที่เกี่ยวข้องกับ Login name และ Password
+                                        growgrass ขอแนะนำให้สมาชิกเก็บข้อมูลที่เกี่ยวข้องกับ Login name และ Password
                                         ไว้เป็นความลับ ทาง growgrassth@gmail.com จะไม่มีการถาม Password ของท่านซ้ำ
                                         ไม่ว่าจะเป็นการโทรศัพท์สอบถาม หรือส่ง E-mail ไปถาม
                                         หากสมาชิกใช้คอมพิวเตอร์ร่วมกับผู้อื่นโปรด Log out
@@ -267,7 +265,7 @@ const PrivacyAndTerms = {
                                 <span class="font-LineBD">เราจะไม่ใช้ข้อมูลส่วนตัวของคุณ</span>
                                 เพื่อวัตถุประสงค์ใดที่เป็นการกระทบกระเทือนหรือสร้างความเดือดร้อนต่อความเป็นส่วนตัวของคุณนอกจากให้บริการหรือเท่าที่กฎหมายกำหนดเราเคารพและคำนึงถึงความเป็นส่วนตัวของลูกค้าของเราอย่างสูงสุดสิ่งที่สำคัญที่สุดคือความสัมพันธ์ระหว่างคุณและเราเราต้องการให้คุณสบายใจและมั่นใจใช้ผลิตภัณฑ์และบริการของเราและเชื่อถือความปลอดภัยของข้อมูลส่วนตัวและแบบแสดงรายการที่คุณกรอกไว้ให้เรา
                             </p>
-                            <UDivider />
+                            <!-- <UDivider /> -->
                             <p class="indent-3 ">
                                 <span class="font-LineBD">คุณมีหน้าที่</span>
                                 ปกป้องข้อมูลบนอุปกรณ์ของคุณเช่นกันโดยใช้โปรแกรมป้องกันไวรัสการอัพเดทซอฟท์แวร์เปลี่ยนรหัสผ่านและไม่ให้บุคคลที่สามเข้าถึงอุปกรณ์ของคุณไม่ว่าทางใด
@@ -290,7 +288,7 @@ const PrivacyAndTerms = {
             <div class="dark:text-gray-300 ">
                 <p class="indent-0 mt-2">
                 <p class="font-LineBD leading-6 ">
-                    <span class="text-red-500">*</span>กรุณาอ่านเงื่อนไขรับประกันให้ครบถ้วน
+                    <span class="text-red-500">* </span>กรุณาอ่านรายละเอียดนโยบายความเป็นส่วนตัวให้ครบถ้วน
                 </p>
                 ในกรณีที่ท่านคลิกปุ่มลงทะเบียนทางgrowgrass จะถือว่าท่านได้อ่านทำความเข้าใจ
                 และยอมรับเงื่อนไขทั้งหมดกล่าวมาข้างต้นแล้ว
@@ -304,10 +302,8 @@ const PrivacyAndTerms = {
     </UModal>
     <!-- เงื่อนไขและข้อกำหนดการรับประกัน -->
     <UModal v-model="termsModal" prevent-close>
-        <UCard style="height: 95dvh" class="overflow-y-scroll" :ui="{
-            ring: '',
-            divide: 'divide-y divide-gray-100 dark:divide-gray-800',
-        }">
+        <UCard :class="['h-[95dvh]', 'md:h-[70dvh]', 'xl:h-[90dvh]']" class="overflow-y-scroll"
+            :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800', }">
             <template #header>
                 <div class="flex items-center justify-between">
                     <h3 class="text-base font-LineBD leading-6 text-gray-900 dark:text-white">
@@ -319,10 +315,10 @@ const PrivacyAndTerms = {
             </template>
             <!-- modal content -->
             <div class="dark:text-gray-200">
-                <p class="indent-0 mt-2">
                 <p class="font-LineBD text-2xl">ขอขอบพระคุณเป็นอย่างยิ่ง!</p>
-                ที่ท่านได้เลือกสินค้าของทางGrowgrass และ
-                ขอเรียนให้ทราบถึงหลักเกณฑ์การรับประกันดังนี้
+                <p class="mt-2">
+                    ที่ท่านได้เลือกสินค้า หรือ บริการของทาง Growgrass
+                    ทางเราขอเรียนให้ทราบถึงหลักเกณฑ์การรับประกันดังต่อไปนี้
                 </p>
             </div>
             <UDivider class="my-5" />
@@ -530,7 +526,7 @@ const PrivacyAndTerms = {
             <div class="dark:text-gray-300 ">
                 <p class="indent-0 mt-2">
                 <p class="font-LineBD leading-6 ">
-                    <span class="text-red-500">*</span>กรุณาอ่านเงื่อนไขรับประกันให้ครบถ้วน
+                    <span class="text-red-500">* </span>กรุณาอ่านเงื่อนไขรับประกันให้ครบถ้วน
                 </p>
                 ในกรณีที่ท่านคลิกปุ่มลงทะเบียนทางgrowgrass จะถือว่าท่านได้อ่านทำความเข้าใจ
                 และยอมรับเงื่อนไขทั้งหมดกล่าวมาข้างต้นแล้ว

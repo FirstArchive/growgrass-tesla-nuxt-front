@@ -97,9 +97,9 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   <!-- USE @ MyForm.vue -->
   <UContainer class="w-full">
     <h1 class="text-right text-5xl font-LineBD dark:text-white">Sign In</h1>
-    <UDivider label="ลงทะเบียน growgrass services" class="my-4"
+    <UDivider label="สมัครสมาชิก growgrass services" class="my-5"
       :ui="{ border: { size: { horizontal: 'border-t-2' } } }" />
-    <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
+    <UForm :schema="schema" :state="state" class="space-y-3" @submit="onSubmit">
       <UFormGroup label="ชื่อ-นามสกุล (ไม่ต้องมีคำนำหน้า)" name="userName">
         <UInput size="lg" v-model="state.userName" type="text" />
       </UFormGroup>
@@ -119,7 +119,9 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         </div>
       </UFormGroup>
 
-      <FormPrivacyAndTerms />
+      <div class="md:py-4">
+        <FormPrivacyAndTerms />
+      </div>
       <!-- <UFormGroup label="รุ่นที่ซื้อ" name="product">
         <UInput size="lg" type="text" />
       </UFormGroup>
@@ -133,6 +135,6 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       </UButton>
       <!-- :MainPageaAds1="MainPageaAds1" -->
     </UForm>
-    <UDivider label="OR" class="my-3" :ui="{ border: { size: { horizontal: 'border-t-2' } } }" />
+    <UDivider label="OR" class="my-2" :ui="{ border: { size: { horizontal: 'border-t-2' } }, label: 'text-xs' }" />
   </UContainer>
 </template>
