@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { object, string, type InferType, number } from "yup";
 import type { FormSubmitEvent } from "#ui/types";
+import { content } from "../../.nuxt/tailwind.config";
 const { register } = useStrapiAuth();
 const router = useRouter();
 
@@ -52,16 +53,30 @@ const state = reactive({
   phoneNumber: undefined,
 });
 
+const checkbox = ref(false);
+
 const passwordsMatch = computed(() => {
   return state.password === state.confirmPassword;
+});
+const isFormReady = computed(() => {
+  return isValid.value && passwordsMatch.value && checkbox.value;
 });
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   const userName = state.userName;
   const email = state.email;
   const password = state.password;
+  const confirmPass = state.confirmPassword;
   const phoneNumber = state.phoneNumber.replace(/-/g, "");
-  // console.log(email, password, userName, phoneNumber);
+  // const isChecked = checkbox.value;
+  // console.log(
+  //   email,
+  //   password,
+  //   userName,
+  //   phoneNumber,
+  //   checkbox.value,
+  //   confirmPass
+  // );
 
   try {
     await register({
@@ -69,6 +84,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       email: email,
       password: password,
       phone: phoneNumber,
+      confirmPass: confirmPass,
     });
 
     router.push("/user/dashboard");
@@ -111,6 +127,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
           รหัสผ่านไม่ตรงกัน
         </div>
       </UFormGroup>
+
+      <FormPrivacyAndTerms />
       <!-- <UFormGroup label="รุ่นที่ซื้อ" name="product">
         <UInput size="lg" type="text" />
       </UFormGroup>
@@ -121,11 +139,11 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       <UButton
         type="submit"
         size="lg"
-        :disabled="!isValid || !passwordsMatch"
-        :class="{ 'cursor-not-allowed': !isValid }"
+        :disabled="!isFormReady"
+        :class="{ 'cursor-not-allowed': !isFormReady }"
         class="font-LineRG w-full justify-center"
       >
-        ตกลง
+        ลงทะเบียน
       </UButton>
       <!-- :MainPageaAds1="MainPageaAds1" -->
     </UForm>

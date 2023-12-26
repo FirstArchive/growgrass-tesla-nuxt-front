@@ -22,7 +22,7 @@ const isOpen = ref(false);
   <UModal v-model="isOpen">
     <div
       style="height: 80dvh"
-      class="p-4 py-10 grid items-center overflow-scroll overflow-y-auto overflow-x-hidden"
+      class="p-4 py-16 grid items-center overflow-scroll overflow-y-auto overflow-x-hidden"
     >
       <!-- style="height: 80svh" -->
       <div class="flex flex-col justify-center items-center">

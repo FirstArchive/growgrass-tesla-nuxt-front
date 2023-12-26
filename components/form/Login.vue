@@ -64,7 +64,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         :class="{ 'cursor-not-allowed': !isValid }"
         class="font-LineRG w-full justify-center"
       >
-        ตกลง
+        เข้าสู่ระบบ
       </UButton>
     </UForm>
     <UDivider

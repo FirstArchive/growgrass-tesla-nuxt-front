@@ -45,8 +45,8 @@ const handleMobileIconClick = () => {
     <!-- Desktop menu -->
     <div class="md:gap-3 xl:gap-10 hidden md:flex mt-[0.15rem]">
       <div
-        v-for="i in desktopHeader"
-        :key="i.alt"
+        v-for="(i, index) in desktopHeader"
+        :key="index"
         class="dark:hover:bg-slate-800 hover:bg-slate-100 hover:cursor-pointer p-1 rounded-md duration-300 relative md:left-[-2rem] lg:left-[-1rem]"
       >
         <NuxtLink :to="i.to">

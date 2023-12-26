@@ -36,7 +36,7 @@ const breakpoints = ref({
     <Carousel :items-to-show="1" :wrap-around="false" class="dark:text-white">
       <!--  v-for="slide in 2" -->
       <Slide v-for="(i, index) in 1" :key="index">
-        <div style="height: 70svh" class="flex">
+        <div style="height: 80svh" class="flex">
           <div
             class="p-4 py-10 flex items-center justify-center overflow-y-auto"
           >
