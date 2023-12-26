@@ -1,4 +1,4 @@
-import { UDivider } from '../../.nuxt/components';
+
 <script setup lang="ts">
 const privacyModal = ref(false);
 const termsModal = ref(false);
@@ -15,7 +15,6 @@ const PrivacyAndTerms = {
     },
 };
 
-const items = [{}];
 </script>
 
 <template>
@@ -40,7 +39,7 @@ const items = [{}];
     <!-- //NOTE - ส่วน Modal -->
     <!-- คำชี้แจงสิทธิ์ส่วนบุคคล -->
     <UModal v-model="privacyModal" prevent-close>
-        <UCard style="height: 80dvh" class="overflow-y-scroll" :ui="{
+        <UCard style="height: 95dvh" class="overflow-y-scroll" :ui="{
             ring: '',
             divide: 'divide-y divide-gray-100 dark:divide-gray-800',
         }">

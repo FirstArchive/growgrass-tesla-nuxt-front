@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { object, string, type InferType, number } from "yup";
 import type { FormSubmitEvent } from "#ui/types";
-import { content } from "../../.nuxt/tailwind.config";
 const { register } = useStrapiAuth();
 const router = useRouter();
 
@@ -98,11 +97,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   <!-- USE @ MyForm.vue -->
   <UContainer class="w-full">
     <h1 class="text-right text-5xl font-LineBD dark:text-white">Sign In</h1>
-    <UDivider
-      label="ลงทะเบียน growgrass services"
-      class="my-4"
-      :ui="{ border: { size: { horizontal: 'border-t-2' } } }"
-    />
+    <UDivider label="ลงทะเบียน growgrass services" class="my-4"
+      :ui="{ border: { size: { horizontal: 'border-t-2' } } }" />
     <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
       <UFormGroup label="ชื่อ-นามสกุล (ไม่ต้องมีคำนำหน้า)" name="userName">
         <UInput size="lg" v-model="state.userName" type="text" />
@@ -111,12 +107,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         <UInput size="lg" v-model="formattedPhoneNumber" type="text" />
       </UFormGroup>
       <UFormGroup label="Email" name="email">
-        <UInput
-          size="lg"
-          v-model="state.email"
-          type="email"
-          autocomplete="on"
-        />
+        <UInput size="lg" v-model="state.email" type="email" autocomplete="on" />
       </UFormGroup>
       <UFormGroup label="Password" name="password">
         <UInput size="lg" v-model="state.password" type="password" />
@@ -136,21 +127,12 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         <UInput size="lg" type="text" />
       </UFormGroup> -->
 
-      <UButton
-        type="submit"
-        size="lg"
-        :disabled="!isFormReady"
-        :class="{ 'cursor-not-allowed': !isFormReady }"
-        class="font-LineRG w-full justify-center"
-      >
+      <UButton type="submit" size="lg" :disabled="!isFormReady" :class="{ 'cursor-not-allowed': !isFormReady }"
+        class="font-LineRG w-full justify-center">
         ลงทะเบียน
       </UButton>
       <!-- :MainPageaAds1="MainPageaAds1" -->
     </UForm>
-    <UDivider
-      label="OR"
-      class="my-3"
-      :ui="{ border: { size: { horizontal: 'border-t-2' } } }"
-    />
+    <UDivider label="OR" class="my-3" :ui="{ border: { size: { horizontal: 'border-t-2' } } }" />
   </UContainer>
 </template>
