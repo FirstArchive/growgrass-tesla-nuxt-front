@@ -14,7 +14,12 @@ const PrivacyAndTerms = {
 `,
     },
 };
+const checkbox = ref(false);
+const emit = defineEmits(['update:checkbox']);
 
+watch(checkbox, (newValue) => {
+    emit('update:checkbox', newValue);
+});
 </script>
 
 <template>

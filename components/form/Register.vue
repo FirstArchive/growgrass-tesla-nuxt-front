@@ -52,7 +52,6 @@ const state = reactive({
   phoneNumber: undefined,
 });
 
-const checkbox = ref(false);
 
 const passwordsMatch = computed(() => {
   return state.password === state.confirmPassword;
@@ -91,6 +90,11 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     alert(`${e.error.message}: กรุณาตรวจสอบข้อมูลให้ถูกต้อง`);
   }
 }
+const checkbox = ref(false);
+
+function handleCheckboxUpdate(value) {
+  checkbox.value = value;
+}
 </script>
 
 <template>
@@ -120,7 +124,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       </UFormGroup>
 
       <div class="py-2 md:py-4">
-        <FormPrivacyAndTerms />
+        <FormPrivacyAndTerms @update:checkbox="handleCheckboxUpdate" />
       </div>
       <!-- <UFormGroup label="รุ่นที่ซื้อ" name="product">
         <UInput size="lg" type="text" />
