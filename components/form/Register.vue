@@ -119,7 +119,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         </div>
       </UFormGroup>
 
-      <div class="md:py-4">
+      <div class="py-2 md:py-4">
         <FormPrivacyAndTerms />
       </div>
       <!-- <UFormGroup label="รุ่นที่ซื้อ" name="product">

@@ -14,7 +14,7 @@ const isOpen = ref(false);
     class="w-full justify-center duration-200" size="lg">สมัครสมาชิก</UButton>
   <UModal v-model="isOpen">
     <div :class="['h-[95dvh]', 'md:h-[70dvh]', 'xl:h-[90dvh]']"
-      class="p-4 xl:py-16 grid items-center overflow-scroll overflow-y-auto overflow-x-hidden">
+      class="p-4 py-10 xl:py-16 grid items-center overflow-scroll overflow-y-auto overflow-x-hidden">
       <!-- style="height: 80svh" -->
       <div class="flex flex-col justify-center items-center">
         <FormRegister />
