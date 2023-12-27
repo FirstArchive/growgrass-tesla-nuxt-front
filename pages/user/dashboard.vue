@@ -54,7 +54,6 @@ const statusInfo = computed(() => {
   return { message: "รออัพเดทข้อมูลรับประกัน..", color: "text-red-500" };
 });
 
-
 const formattedPhone = computed(() => {
   if (!users.phone) return "ยังไม่มีข้อมูล";
   return `${users.phone.slice(0, 3)}-${users.phone.slice(
@@ -93,42 +92,81 @@ const remainingWarrantyDays = computed(() => {
 </script>
 
 <template>
-  <div style="height: 100dvh;" class="flex py-20 px-5 items-start justify-center h-screen overflow-y-auto">
-    <div class="flex md:max-w-xl xl:max-w-4xl mt-10 w-full flex-col justify-start items-center dark:text-white">
+  <div
+    style="height: 100dvh"
+    class="flex py-12 px-5 items-start justify-center h-screen overflow-y-auto"
+  >
+    <div
+      class="flex md:max-w-xl xl:max-w-4xl mt-12 w-full flex-col justify-start items-center dark:text-white"
+    >
       <div class="font-LineBD text-2xl">ยินดีต้อนรับ!</div>
       <div>
-        <span class="font-LineBD text-xl">คุณ {{ users.fname }} {{ users.lname }}</span>
+        <span class="font-LineBD text-xl"
+          >คุณ {{ users.fname }} {{ users.lname }}</span
+        >
       </div>
       <UDivider label="ข้อมูลของคุณ" class="my-3" />
       <!--  -->
       <section class="grid xl:grid-cols-2 gap-x-10 gap-3 w-full lg:flex-row">
         <UFormGroup label="ชื่อ-นามสกุล">
-          <UInput size="lg" disabled :placeholder="users.fname + ' ' + users.lname || 'ยังไม่มีข้อมูล'" />
+          <UInput
+            size="lg"
+            disabled
+            :placeholder="users.fname + ' ' + users.lname || 'ยังไม่มีข้อมูล'"
+          />
         </UFormGroup>
         <UFormGroup label="อีเมลล์">
-          <UInput size="lg" disabled :placeholder="users.useremail || 'ยังไม่มีข้อมูล'" />
+          <UInput
+            size="lg"
+            disabled
+            :placeholder="users.useremail || 'ยังไม่มีข้อมูล'"
+          />
         </UFormGroup>
         <UFormGroup label="เบอร์โทรศัพท์">
-          <UInput size="lg" disabled :placeholder="formattedPhone || 'ยังไม่มีข้อมูล'" />
+          <UInput
+            size="lg"
+            disabled
+            :placeholder="formattedPhone || 'ยังไม่มีข้อมูล'"
+          />
         </UFormGroup>
         <UFormGroup label="รุ่นที่ซื้อ">
-          <UInput size="lg" disabled :placeholder="users.product || 'ยังไม่มีข้อมูล'" />
+          <UInput
+            size="lg"
+            disabled
+            :placeholder="users.product || 'ยังไม่มีข้อมูล'"
+          />
         </UFormGroup>
         <UFormGroup label="วันที่ซื้อ/ติดตั้ง">
           <!-- color="gray" -->
-          <UInput size="lg" disabled icon="i-heroicons-calendar-days-20-solid"
-            :placeholder="users.buydate || 'ยังไม่มีข้อมูล'" class="w-full" />
+          <UInput
+            size="lg"
+            disabled
+            icon="i-heroicons-calendar-days-20-solid"
+            :placeholder="users.buydate || 'ยังไม่มีข้อมูล'"
+            class="w-full"
+          />
         </UFormGroup>
         <UFormGroup label="ระยะเวลารับประกันทั้งหมด">
-          <UInput size="lg" disabled icon="i-heroicons-clock" :placeholder="users.YearOfWarranty
-            ? users.YearOfWarranty + ' ปี'
-            : 'ยังไม่มีข้อมูล'
-            " />
+          <UInput
+            size="lg"
+            disabled
+            icon="i-heroicons-clock"
+            :placeholder="
+              users.YearOfWarranty
+                ? users.YearOfWarranty + ' ปี'
+                : 'ยังไม่มีข้อมูล'
+            "
+          />
         </UFormGroup>
         <UFormGroup label="ระยะเวลารับประกันที่เหลือ">
           <!-- color="gray" -->
-          <UInput size="lg" disabled icon="i-heroicons-calendar-days-20-solid"
-            :placeholder="remainingWarrantyDays || 'ยังไม่มีข้อมูล'" class="w-full" />
+          <UInput
+            size="lg"
+            disabled
+            icon="i-heroicons-calendar-days-20-solid"
+            :placeholder="remainingWarrantyDays || 'ยังไม่มีข้อมูล'"
+            class="w-full"
+          />
         </UFormGroup>
       </section>
       <!-- <div>
@@ -146,7 +184,10 @@ const remainingWarrantyDays = computed(() => {
           </div> -->
 
       <div class="py-4">
-        <p>สถานะ : <span :class="statusInfo.color">{{ statusInfo.message }}</span></p>
+        <p>
+          สถานะ :
+          <span :class="statusInfo.color">{{ statusInfo.message }}</span>
+        </p>
       </div>
       <div class="gap-x-4 flex w-full justify-center">
         <!-- <UButton
@@ -156,7 +197,7 @@ const remainingWarrantyDays = computed(() => {
                 @click="toggleDisable"
                 >{{ buttonText }}</UButton
               > -->
-        <FormLogoutBtn size="xl" class="w-full  xl:w-1/4" />
+        <FormLogoutBtn size="xl" class="w-full xl:w-1/4" />
       </div>
     </div>
   </div>
