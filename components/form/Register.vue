@@ -71,7 +71,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   const email = state.email;
   const password = state.password;
   const confirmPass = state.confirmPassword;
-  const fname = state.lname;
+  const fname = state.fname;
   const lname = state.lname;
   const phoneNumber = state.phoneNumber.replace(/-/g, "");
   const isChecked = checkbox.value;
