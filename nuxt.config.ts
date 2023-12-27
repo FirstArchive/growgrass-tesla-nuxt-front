@@ -37,10 +37,10 @@ export default defineNuxtConfig({
     [
       "@nuxtjs/strapi",
       {
-        // url:
-        //   process.env.STRAPI_URL ||
-        //   "https://growgrass-backend-219eddb36010.herokuapp.com",
-        url: "http://localhost:1337",
+        url:
+          process.env.STRAPI_URL ||
+          "https://growgrass-backend-219eddb36010.herokuapp.com",
+        // url: "http://localhost:1337",
         prefix: "/api",
         admin: "/admin",
         version: "v4",
