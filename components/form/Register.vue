@@ -56,16 +56,18 @@ const state = reactive({
   phoneNumber: undefined,
 });
 
-
 const passwordsMatch = computed(() => {
   return state.password === state.confirmPassword;
 });
 const isFormReady = computed(() => {
   return isValid.value && passwordsMatch.value && checkbox.value;
 });
-watch(() => state.userName, (newUserName) => {
-  state.fname = newUserName;
-});
+watch(
+  () => state.userName,
+  (newUserName) => {
+    state.fname = newUserName;
+  }
+);
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   const userName = state.userName;
   const email = state.email;
@@ -113,8 +115,11 @@ function handleCheckboxUpdate(value) {
   <!-- USE @ MyForm.vue -->
   <UContainer class="w-full">
     <h1 class="text-right text-5xl font-LineBD dark:text-white">Sign In</h1>
-    <UDivider label="สมัครสมาชิก growgrass services" class="my-5"
-      :ui="{ border: { size: { horizontal: 'border-t-2' } } }" />
+    <UDivider
+      label="สมัครสมาชิก growgrass services"
+      class="my-5"
+      :ui="{ border: { size: { horizontal: 'border-t-2' } } }"
+    />
     <UForm :schema="schema" :state="state" class="space-y-3" @submit="onSubmit">
       <UFormGroup label="ชื่อ (ไม่ต้องมีคำนำหน้า)" name="userName">
         <UInput size="lg" v-model="state.userName" type="text" />
@@ -126,9 +131,14 @@ function handleCheckboxUpdate(value) {
         <UInput size="lg" v-model="formattedPhoneNumber" type="text" />
       </UFormGroup>
       <UFormGroup label="Email" name="email">
-        <UInput size="lg" v-model="state.email" type="email" autocomplete="on" />
+        <UInput
+          size="lg"
+          v-model="state.email"
+          type="email"
+          autocomplete="on"
+        />
       </UFormGroup>
-      <UFormGroup label="Password" name="password">
+      <UFormGroup label="Password (กรุณาเช็คภาษาแป้นพิมพ์)" name="password">
         <UInput size="lg" v-model="state.password" type="password" />
       </UFormGroup>
       <UFormGroup label="ยืนยัน Password" name="confirmPassword">
@@ -148,12 +158,21 @@ function handleCheckboxUpdate(value) {
         <UInput size="lg" type="text" />
       </UFormGroup> -->
 
-      <UButton type="submit" size="lg" :disabled="!isFormReady" :class="{ 'cursor-not-allowed': !isFormReady }"
-        class="font-LineRG w-full justify-center">
+      <UButton
+        type="submit"
+        size="lg"
+        :disabled="!isFormReady"
+        :class="{ 'cursor-not-allowed': !isFormReady }"
+        class="font-LineRG w-full justify-center"
+      >
         ลงทะเบียน
       </UButton>
       <!-- :MainPageaAds1="MainPageaAds1" -->
     </UForm>
-    <UDivider label="OR" class="my-2" :ui="{ border: { size: { horizontal: 'border-t-2' } }, label: 'text-xs' }" />
+    <UDivider
+      label="OR"
+      class="my-2"
+      :ui="{ border: { size: { horizontal: 'border-t-2' } }, label: 'text-xs' }"
+    />
   </UContainer>
 </template>
