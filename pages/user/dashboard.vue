@@ -37,12 +37,32 @@ const buttonText = computed(() => (Adisable.value ? "แก้ไข" : "ยื�
 
 const users = {
   username: user.value?.username,
+  fname: user.value?.fname,
+  lname: user.value?.lname,
   useremail: user.value?.email,
   phone: user.value?.phone,
   product: user.value?.product,
   buydate: user.value?.buydate,
   YearOfWarranty: user.value?.YearOfWarranty,
+  statusUser: user.value?.status,
 };
+
+const statusInfo = computed(() => {
+  if (users.statusUser) {
+    return { message: "ข้อมูลอัพเดตเรียบร้อยแล้ว", color: "text-green-500" };
+  }
+  return { message: "รออัพเดทข้อมูลรับประกัน..", color: "text-red-500" };
+});
+
+
+const formattedPhone = computed(() => {
+  if (!users.phone) return "ยังไม่มีข้อมูล";
+  return `${users.phone.slice(0, 3)}-${users.phone.slice(
+    3,
+    6
+  )}-${users.phone.slice(6)}`;
+});
+
 // console.log(users.YearOfWarranty.toString());
 
 // ฟังก์ชันคำนวณวันที่สิ้นสุดการรับประกัน
@@ -73,98 +93,76 @@ const remainingWarrantyDays = computed(() => {
 </script>
 
 <template>
-  <UContainer class="flex items-center justify-center">
-    <div
-      class="flex py-24 h-full w-full flex-col justify-start items-center dark:text-white"
-    >
-      <div class="font-LineBD text-2xl">ยินดีต้อนรับ!</div>
-      <div>
-        <span class="font-LineBD text-xl">คุณ {{ users.username }}</span>
-      </div>
-      <UDivider label="ข้อมูลของคุณ" class="my-3" />
-      <!--  -->
-      <section class="grid xl:grid-cols-2 gap-3 w-full lg:flex-row">
-        <UFormGroup label="ชื่อ-นามสกุล"
-          ><UInput
-            size="lg"
-            disabled
-            :placeholder="users.username || 'ยังไม่มีข้อมูล'"
-        /></UFormGroup>
-        <UFormGroup label="อีเมลล์"
-          ><UInput
-            size="lg"
-            disabled
-            :placeholder="users.useremail || 'ยังไม่มีข้อมูล'"
-        /></UFormGroup>
-        <UFormGroup label="เบอร์โทรศัพท์"
-          ><UInput
-            size="lg"
-            disabled
-            :placeholder="users.phone || 'ยังไม่มีข้อมูล'"
-        /></UFormGroup>
-        <UFormGroup label="รุ่นที่ซื้อ"
-          ><UInput
-            size="lg"
-            disabled
-            :placeholder="users.product || 'ยังไม่มีข้อมูล'"
-        /></UFormGroup>
-        <UFormGroup label="วันที่ซื้อ/ติดตั้ง">
-          <!-- color="gray" -->
-          <UInput
-            size="lg"
-            disabled
-            icon="i-heroicons-calendar-days-20-solid"
-            :placeholder="users.buydate || 'ยังไม่มีข้อมูล'"
-            class="w-full"
-          />
-        </UFormGroup>
-        <UFormGroup label="ระยะเวลารับประกัน"
-          ><UInput
-            size="lg"
-            disabled
-            icon="i-heroicons-clock"
-            :placeholder="
-              users.YearOfWarranty
-                ? users.YearOfWarranty + ' ปี'
-                : 'ยังไม่มีข้อมูล'
-            "
-        /></UFormGroup>
-        <UFormGroup label="เหลือวันรับประกัน">
-          <!-- color="gray" -->
-          <UInput
-            size="lg"
-            disabled
-            icon="i-heroicons-calendar-days-20-solid"
-            :placeholder="remainingWarrantyDays || 'ยังไม่มีข้อมูล'"
-            class="w-full"
-          />
-        </UFormGroup>
-      </section>
-      <!-- <div>
-        Role : <span class="font-LineBD text-xl">{{ role }}</span>
-      </div> -->
-      <!-- <div v-if="Adisable" class="text-center text-sm">
-          <h1 class="my-3">Profile is update..</h1>
+  <div>
+    <UContainer class="flex items-center justify-center h-screen">
+      <div class="flex mt-28 mb-20 w-full flex-col justify-start items-center dark:text-white">
+        <div class="font-LineBD text-2xl">ยินดีต้อนรับ!</div>
+        <div>
+          <span class="font-LineBD text-xl">คุณ {{ users.fname }} {{ users.lname }}</span>
         </div>
-        <div v-else class="text-center text-sm">
-          <h1 class="my-3">
-            กำลังแก้ไข Profile<br /><span class="font-LineBD"
-              >โปรดตรวจสอบข้อมูลให้ถูกต้อง</span
-            >
-          </h1>
+        <UDivider label="ข้อมูลของคุณ" class="my-3" />
+        <!--  -->
+        <section class="grid xl:grid-cols-2 gap-x-10 gap-3 w-full lg:flex-row">
+          <UFormGroup label="ชื่อ-นามสกุล">
+            <UInput size="lg" disabled :placeholder="users.fname + ' ' + users.lname || 'ยังไม่มีข้อมูล'" />
+          </UFormGroup>
+          <UFormGroup label="อีเมลล์">
+            <UInput size="lg" disabled :placeholder="users.useremail || 'ยังไม่มีข้อมูล'" />
+          </UFormGroup>
+          <UFormGroup label="เบอร์โทรศัพท์">
+            <UInput size="lg" disabled :placeholder="formattedPhone || 'ยังไม่มีข้อมูล'" />
+          </UFormGroup>
+          <UFormGroup label="รุ่นที่ซื้อ">
+            <UInput size="lg" disabled :placeholder="users.product || 'ยังไม่มีข้อมูล'" />
+          </UFormGroup>
+          <UFormGroup label="วันที่ซื้อ/ติดตั้ง">
+            <!-- color="gray" -->
+            <UInput size="lg" disabled icon="i-heroicons-calendar-days-20-solid"
+              :placeholder="users.buydate || 'ยังไม่มีข้อมูล'" class="w-full" />
+          </UFormGroup>
+          <UFormGroup label="ระยะเวลารับประกันทั้งหมด">
+            <UInput size="lg" disabled icon="i-heroicons-clock" :placeholder="users.YearOfWarranty
+              ? users.YearOfWarranty + ' ปี'
+              : 'ยังไม่มีข้อมูล'
+              " />
+          </UFormGroup>
+          <UFormGroup label="ระยะเวลารับประกันที่เหลือ">
+            <!-- color="gray" -->
+            <UInput size="lg" disabled icon="i-heroicons-calendar-days-20-solid"
+              :placeholder="remainingWarrantyDays || 'ยังไม่มีข้อมูล'" class="w-full" />
+          </UFormGroup>
+        </section>
+        <!-- <div>
+          Role : <span class="font-LineBD text-xl">{{ role }}</span>
         </div> -->
-      <div class="pb-10 gap-x-4 flex w-full justify-center">
-        <!-- <UButton
-            size="lg"
-            :color="[Adisable ? 'primary' : 'red']"
-            class="w-1/3 justify-center duration-300"
-            @click="toggleDisable"
-            >{{ buttonText }}</UButton
-          > -->
-        <FormLogoutBtn size="xl" class="w-1/2 mt-10" />
+        <!-- <div v-if="Adisable" class="text-center text-sm">
+            <h1 class="my-3">Profile is update..</h1>
+          </div>
+          <div v-else class="text-center text-sm">
+            <h1 class="my-3">
+              กำลังแก้ไข Profile<br /><span class="font-LineBD"
+                >โปรดตรวจสอบข้อมูลให้ถูกต้อง</span
+              >
+            </h1>
+          </div> -->
+
+        <div class="py-4">
+          <p>สถานะ : <span :class="statusInfo.color">{{ statusInfo.message }}</span></p>
+        </div>
+        <div class="gap-x-4 flex w-full justify-center">
+          <!-- <UButton
+                size="lg"
+                :color="[Adisable ? 'primary' : 'red']"
+                class="w-1/3 justify-center duration-300"
+                @click="toggleDisable"
+                >{{ buttonText }}</UButton
+              > -->
+          <FormLogoutBtn size="xl" class="w-full md:w-1/3 lg:w-1/6" />
+        </div>
       </div>
-    </div>
-  </UContainer>
+
+    </UContainer>
+  </div>
 </template>
 
 <style scoped></style>

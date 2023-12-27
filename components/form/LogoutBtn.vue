@@ -2,9 +2,6 @@
 const { logout } = useStrapiAuth();
 const router = useRouter();
 
-const darkmode = ref(
-  "dark:hover:bg-slate-950 dark:hover:text-white dark:text-slate-900"
-);
 const islogout = () => {
   logout();
   router.push("/");
@@ -12,15 +9,10 @@ const islogout = () => {
 </script>
 
 <template>
-  <UButton
-    @click="islogout()"
-    size="sm"
-    color="red"
-    variant="soft"
-    :class="darkmode"
-    class="w-full justify-center duration-200 dark:text-gray-400"
-    >Log Out!!</UButton
-  >
+  <UButton @click="islogout()" size="sm" color="red" variant="solid"
+    class="w-full justify-center  dark:bg-red-500 dark:text-white">Log
+    Out!!
+  </UButton>
 </template>
 
 <style scoped></style>

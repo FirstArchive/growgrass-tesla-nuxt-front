@@ -13,6 +13,8 @@ const schema = object({
     .required("จำเป็นต้องระบุรหัสผ่าน"),
   confirmPassword: string().required("จำเป็นต้องยืนยันรหัสผ่าน"),
   userName: string().required("จำเป็นต้องระบุชื่อ"),
+  fname: string().required("จำเป็นต้องระบุชื่อ"),
+  lname: string().required("จำเป็นต้องระบุนามสกุล"),
   phoneNumber: string()
     .matches(/^\d{10}$/, "เบอร์โทรศัพท์ต้องเป็นตัวเลข 10 หลัก")
     .required("จำเป็นต้องระบุเบอร์โทร"),
@@ -49,6 +51,8 @@ const state = reactive({
   password: undefined,
   confirmPassword: undefined,
   userName: undefined,
+  fname: undefined,
+  lname: undefined,
   phoneNumber: undefined,
 });
 
@@ -59,26 +63,34 @@ const passwordsMatch = computed(() => {
 const isFormReady = computed(() => {
   return isValid.value && passwordsMatch.value && checkbox.value;
 });
-
+watch(() => state.userName, (newUserName) => {
+  state.fname = newUserName;
+});
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   const userName = state.userName;
   const email = state.email;
   const password = state.password;
   const confirmPass = state.confirmPassword;
+  const fname = state.lname;
+  const lname = state.lname;
   const phoneNumber = state.phoneNumber.replace(/-/g, "");
-  // const isChecked = checkbox.value;
+  const isChecked = checkbox.value;
   // console.log(
   //   email,
   //   password,
   //   userName,
+  //   fname,
+  //   lname,
+  //   confirmPass,
   //   phoneNumber,
   //   checkbox.value,
-  //   confirmPass
   // );
 
   try {
     await register({
       username: userName,
+      fname: fname,
+      lname: lname,
       email: email,
       password: password,
       phone: phoneNumber,
@@ -104,8 +116,11 @@ function handleCheckboxUpdate(value) {
     <UDivider label="สมัครสมาชิก growgrass services" class="my-5"
       :ui="{ border: { size: { horizontal: 'border-t-2' } } }" />
     <UForm :schema="schema" :state="state" class="space-y-3" @submit="onSubmit">
-      <UFormGroup label="ชื่อ-นามสกุล (ไม่ต้องมีคำนำหน้า)" name="userName">
+      <UFormGroup label="ชื่อ (ไม่ต้องมีคำนำหน้า)" name="userName">
         <UInput size="lg" v-model="state.userName" type="text" />
+      </UFormGroup>
+      <UFormGroup label="นามสกุล" name="lname">
+        <UInput size="lg" v-model="state.lname" type="text" />
       </UFormGroup>
       <UFormGroup label="เบอร์โทรศัพท์" name="phoneNumber">
         <UInput size="lg" v-model="formattedPhoneNumber" type="text" />
