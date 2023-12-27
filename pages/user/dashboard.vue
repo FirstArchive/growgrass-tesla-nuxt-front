@@ -93,7 +93,7 @@ const remainingWarrantyDays = computed(() => {
 </script>
 
 <template>
-  <div style="height: 100dvh;" class="flex py-20 px-5 items-center justify-center h-screen">
+  <div style="height: 100dvh;" class="flex py-20 px-5 items-start justify-center h-screen overflow-y-auto">
     <div class="flex md:max-w-xl xl:max-w-4xl mt-10 w-full flex-col justify-start items-center dark:text-white">
       <div class="font-LineBD text-2xl">ยินดีต้อนรับ!</div>
       <div>
