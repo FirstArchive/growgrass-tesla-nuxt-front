@@ -17,6 +17,7 @@
   opacity: 0;
   transform: translate(0px, -50px);
 }
+
 .slide-top-leave-to {
   opacity: 0;
   transform: translate(0px, 50px);
